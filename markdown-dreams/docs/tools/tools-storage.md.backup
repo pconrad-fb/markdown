@@ -1,0 +1,48 @@
+# Storage
+
+The simplest place to store Markdown is on your own computer, of course. You can merrily save files to a folder deep in `My Documents` and go on your way, perhaps emailing someone a Pandoc-generated PDF from time to time. But if you want to enjoy the true power of collaborating and publishing with Markdown, you'll want to put your files online.
+
+## The cloud
+
+Cloud storage services like [Box](https://www.box.com), [DropBox](https://www.dropbox.com/), and [OneDrive](https://onedrive.live.com) are a great place to start. You can save Markdown files from one computer and have them available everywhere, even sharing them. Cloud storage is great for [Taking notes](../../recipes/recipes-notes), because it lets you add to your notes from anywhere.
+
+## Source control
+
+Any time you collaborate with others, source control is important. Although you could just share a folder in the cloud, eventually there will come a time when someone overwrites or deletes something important. That's where source control comes in. And by "source control," I mean Git. 
+
+### Why Git?
+
+Back in the day, there were all kinds of source control systems. The ones I remember were all pretty easy to use, but were all centralized&mdash;meaning that only one person can edit any given file at any given time. Worse, it means that there's one central source of truth; if that gets corrupted or lost, everything is gone. Git solves these problems and [doesn't have to be hard to use](https://levelup.gitconnected.com/git-doesnt-have-to-be-hard-e1e115be6668).
+
+There are many places to host a Git repository. You might start with one of these:
+
+- [Bitbucket](https://bitbucket.org)
+- [GitHub](https://github.com/)
+- [GitLab](https://about.gitlab.com/)
+
+You can use Git on the command line, but it's even easier if you use a Git client like one of these:
+
+- [GitHub Desktop](https://desktop.github.com/)
+- [Sourcetree](https://www.sourcetreeapp.com/)
+
+With Git, you can collaborate safely with others, working independently and merging your work as needed. That's why Git is so useful for recipes like these:
+
+- [Distributed workflow](../../recipes/recipes-distributed-workflow/)
+- [Git wiki](../../recipes/recipes-git-wiki)
+- [Gitflow](../../recipes/recipes-gitflow)
+
+!!! note
+    For the examples in this guide, I've decided to use Bitbucket and Sourcetree. Other
+    Git repositories and clients are similar, so you should be fine if you select
+    something else. One thing I like about Sourcetree is the way it handles staging
+    (committing) files.
+    
+###
+
+## Web hosting
+
+If you're creating online documentation or a website, you'll need a place to host it. You might need web hosting if you're using the following recipes to publish online:
+
+- [Distributed workflow](../../recipes/recipes-distributed-workflow/)
+- [Gitflow](../../recipes/recipes-gitflow/)
+- [Slides](../../recipes/recipes-slides/)

@@ -1,0 +1,12 @@
+# Resources
+
+- [Git doesn't have to be hard](https://levelup.gitconnected.com/git-doesnt-have-to-be-hard-e1e115be6668)
+- [MkDocs](https://www.mkdocs.org/)
+
+[Box](https://www.box.com), [DropBox](https://www.dropbox.com/), and [OneDrive](https://onedrive.live.com)
+
+common package managers:
+
+  - Windows: [Chocolatey](https://chocolatey.org/)
+  - macOS: [Homebrew](https://brew.sh/)
+  - Linux: [apt-get](https://help.ubuntu.com/community/AptGet/Howto) or [yum](http://yum.baseurl.org/)

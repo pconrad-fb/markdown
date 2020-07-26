@@ -1,0 +1,15 @@
+# Publishing
+
+    Git wiki
+    
+    
+    
+    
+    MkDocs
+        They have themes with different kind of extensions
+        Very cool, extensible, easy, live preview
+    Hugo
+    Pandoc
+        eBook
+        PDF
+        Word

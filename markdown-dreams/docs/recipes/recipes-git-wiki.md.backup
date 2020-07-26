@@ -1,0 +1,137 @@
+# Working with a Git wiki
+
+A Git repository comes with a wiki, which makes it possible to collaboratively read and edit documentation. You can create a wiki to document projects or code stored in the repository, or you can just use a repository for its wiki capability.
+
+!!! note
+    Different Git hosts deal with wikis in different ways. At the time of writing, 
+    adding a wiki to a repository on GitHub required either that the repository be 
+    public or a paid version. If you are having trouble adding a wiki to a repository,
+    make sure your repo is public.
+    
+A Git wiki bases the URLs for pages on the file hierarchy. Consider a wiki with the following files:
+
+```
+Home.md
+stuff/
+    something.md
+
+```
+
+The URL to `something.md` is: /wiki/stuff/something
+    
+## Before you begin
+
+Make sure you have [Set up Git](../recipes-setup-git).
+
+You'll need:
+
+- Git installed on your computer
+- An account with an online Git host
+- A repository set up on your host
+- A Git client such as Sourcetree
+- A text editor or Markdown editor
+
+!!! note
+    This recipe doesn't use branching at all. This might seem strange to anyone
+    who has been using Git for a while.
+    
+## Set up a wiki on your repository
+
+The steps are similar for different Git hosts and clients. Here is what those steps look like in Bitbucket and Sourcetree:
+
+1. In a browser, log on to Bitbucket (or your preferred host).
+1. Under "Repository settings" look for "Features" and click **Wiki**
+1. Select **Public wiki** and save.  
+   ![](../img/recipes-git-wiki-create.png)
+   
+If you just want to add a few pages to the wiki online, there's no more setup to do! Just go to your repository, click **Wiki**, and you'll see buttons for creating and editing pages. 
+
+!!! hint
+    To add a page in a new folder, make the folder part of the new file name. 
+    For example: `morestuff/newpage.md`
+
+## Cloning the wiki to your local repository
+
+There are advantages to cloning the wiki to your local repository:
+
+- It's much easier to add folders and move files around
+- You can work on it even when you're offlne
+- You can use whatever Markdown editor you want
+
+Although the wiki is associated with a repository, it's actuall a separate repository of its own. You need to clone it separately. Here are the steps for Bitbucket:
+
+1. Go to your online repository and click **Wiki**.
+2. Click **Clone wiki** then **Clone in Sourcetree**.  
+   ![](../img/recipes-git-repo-bb-clone-wiki.png)
+
+!!! note
+    If you can't find **Clone in Sourcetree** (or, for GitHub, **Open in GitHub
+    Desktop**) in your online repository:
+    
+    1. In your online repository, go to the wiki and look for the URL to
+       clone the wiki repository locally.  
+    1. In your client (Sourcetree or GitHub Desktop), click **File > Clone** 
+       and paste the URL, then click **Clone**.
+
+## Working with the wiki locally
+
+On your computer, to to the directory where you cloned the wiki. There should be a directory called `wiki` containing a file called `Home.md`&mdash;the Markdown source for the welcome page the wiki displayed when you created it online.
+
+### Pull
+
+1. Make sure you're on the right branch. This recipe doesn't use branching, but that doesn't make it any less important to check. If you are on a branch you don't recognize, fix that problem first.
+2. Select **Repository > Pull** or click the **Pull** button. 
+
+### Make some changes
+
+1. Make some changes in your wiki directory. For example:
+	- Add a folder called `stuff`.
+	- Using your favorite Markdown editor, make a file called `something.md` inside `stuff`, with the following contents:  
+
+    ```
+    
+    # Something
+
+    Yes, there's *something* here! Now go [home](../Home).
+
+    ```
+    
+You should now have a directory structure that looks familiar:
+
+```
+Home.md
+stuff/
+    something.md
+
+```
+
+### Commit the changes
+
+When you commit changes, you first decide which files to include in the commit. This process is called *staging* the files. Different clients show uncommitted changes differently. For example:
+
+- Bitbucket makes you stage files as a separate step. Most of the time, you'll probably want to click **Stage All**.
+- GitHub Desktop shows changed files with checkboxes so that you can unstage files if needed. Most of the time, you'll probably leave them all checked.  
+
+There are times you might stage some files and not others for a commit, but for now think of these two operations as parts of a single step.
+
+1. In your Git client, go to your wiki. You should see the changes you expected.
+2. Make sure the files are staged.
+3. Write a summary of the commit (something like `"Added something.md"`) and click **Commit**.
+
+### Push
+
+1. Select **Repository > Push** or click the **Push** button.
+
+### Take a look
+
+1. Go to your online repository and click **Wiki**.
+2. View the page tree of the wiki. For example:
+	- In Bitbucket, click the name of the wiki.
+	- In GitHub, click **Pages**.
+1. Navigate to the page you created.  
+   ![](../img/recipes-git-wiki-bb-something.png)
+1. Try the `home` link.
+
+## Next steps
+
+Now you know how to edit pages both online and locally. When you edit pages online, you can commit them directly to the online repository. Remember to pull before editing or adding pages from your local repo (on your computer).
