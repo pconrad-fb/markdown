@@ -1,0 +1,51 @@
+# Collaborate using centralized Git workflow
+
+You can use Git to help a team collaborate on informal or internal documents in a very simple way. If you use a graphical Git client and a WYSIWYG Markdown editor, the workflow is easy enough for people who don't want complicated technical procedures to get in the way of their work. At the same time, Markdown in Git is easy for engineers to work with in their own tools.
+
+Although a git repository comes with a separate wiki repository, you might sometimes want to collaborate on content without the constraints of storing it in a wiki.
+In other words, [Running a Git wiki](../recipes-git-wiki) is a easy way to create, edit, and view a lot of content&mdash;but using other tools to work with content on your own computer, using a Git repository only for source control, is a much more robust way to collaborate. 
+
+For non-production content such as specifications, planning documents, newsletters, internal documentation, and the like, you can use a simple single-branch strategy called the centralized Git workflow.
+
+## Before you begin
+
+Make sure you have read [Git basics](../../getting-started/getting-started-git-basics).
+
+You'll need:
+
+- Git installed on your computer
+- An account with an online Git host
+- A repository set up on your host such as Bitbucket
+- A Git client such as Sourcetree
+- A text editor or Markdown editor
+
+!!! note
+    This recipe doesn't use branching at all. This might seem strange to anyone
+    who has been using Git for a while.
+    
+The hardest part of this recipe is setting up and cloning the repository. Once that's done, working with content is easy.
+
+## Working with content
+
+The key is to always remain on the `master` branch. Then just do the following steps:
+
+1. [**Pull**](../../getting-started/getting-started-git-basics/#pull).
+2. Make some changes.
+3. [**Commit**](../../getting-started/getting-started-git-basics/#stage-and-commit).
+4. [**Push**](../../getting-started/getting-started-git-basics/#push).
+
+## Publishing content
+
+Everyone who has set up Git and connected to the repository can now work with the content and can view the content on their own computers But what if you want to make the content available to others? 
+
+You can use a tool like Pandoc to create PDFs, a static site generator to build a website, or even create a slide presentation. Check out some of the other recipes to see how.
+
+## Next steps
+
+Check out the following recipes  :
+
+- [Manage docs with Gitflow](../recipes-gitflow.md)
+- [Create an eBook](../recipes-pandoc-ebook.md)
+- [Write a Word doc](../recipes-pandoc-word.md)
+- [Publish a PDF](../recipes-pandoc-pdf.md)
+- [Present slides](../recipes-slides.md)
