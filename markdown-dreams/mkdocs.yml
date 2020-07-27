@@ -18,7 +18,9 @@ markdown_extensions:
 
 nav:
     - 'How to do things with Markdown': 'index.md'
-    - 'Getting started': 'getting-started/index.md'
+    - 'Getting started': 
+        - 'Concepts': 'getting-started/getting-started.md'
+        - 'Git basics': 'getting-started/getting-started-git-basics.md'
     - 'Tools':
         - 'Markdown editors': 'tools/tools-editors.md'
         - 'Storage': 'tools/tools-storage.md'
@@ -30,7 +32,7 @@ nav:
 #        - 'Overview': 'recipes/index.md'
         - 'Take notes': 'recipes/recipes-notes.md'
         - 'Run a Git wiki': 'recipes/recipes-git-wiki.md'
-        - 'Collaborate with a distributed workflow': 'recipes/recipes-distributed-workflow.md'
+        - 'Collaborate using Git centralized workflow': 'recipes/recipes-centralized-workflow.md'
         - 'Manage docs with Gitflow': 'recipes/recipes-gitflow.md'
         - 'Create an eBook': 'recipes/recipes-pandoc-ebook.md'
         - 'Write a Word doc': 'recipes/recipes-pandoc-word.md'
