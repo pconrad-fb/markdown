@@ -190,6 +190,8 @@ Git knows when you make changes to your files. When you want to save those chang
        ```
        $ git push origin master
        ```
+       Of course, since git knows what branch you're on and where your remote is, you
+       can often just type ``git push`.
 
 <!--
 ### Branching
