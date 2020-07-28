@@ -71,15 +71,9 @@ A good Git workflow looks like this:
 3. **Stage and commit fairly often.** *Staging* files means deciding which ones to commit. Most of the time, there's no reason not to stage all changed files and commit them to your local repository frequently. Every commit is a point you can roll back to, giving you plenty of power to back out changes if necessary.
 4. **Push when your work is ready for review.** *Pushing* files up to the local repository makes them available to others, so it's kindest not to push until your work is in good shape. In projects that use branching, a push is not the final step; after pushing people can review your work before it is pushed into production. If your project only has one branch, then when you push that's it.
 
-### Branch
+### Branching
 
-=== "Sourcetree"
-
-
-=== "GitHub Desktop"
-
-
-=== "Linux command line"
+Although it's possible to use Git without doing any branches, it's unusual. To learn the basics of a simple Git branching workflow, see [Manage docs with GitHub Flow](../../recipes/recipes-gitflow/).
 
 
 ### Pull
@@ -193,61 +187,7 @@ Git knows when you make changes to your files. When you want to save those chang
        Of course, since git knows what branch you're on and where your remote is, you
        can often just type ``git push`.
 
-<!--
-### Branching
 
-Why do people work on different branches
-What's the flow?
-
-1. Create a new branch
-1. Go to that branch
-1. Work and commit as normal
-1. Do a pull request
-1. Merge
-
-#### Branch
-
-=== "Sourcetree"
-    
-    1. asd
-
-=== "GitHub Desktop"
-     
-    1. asd
-
-=== "Linux command line"
-
-    1. asd
-
-#### Create a pull request
-
-=== "Sourcetree"
-    
-    1. asd
-
-=== "GitHub Desktop"
-     
-    1. asd
-
-=== "Linux command line"
-
-    1. asd
-    
-#### Merge
-
-=== "Sourcetree"
-    
-    1. asd
-
-=== "GitHub Desktop"
-     
-    1. asd
-
-=== "Linux command line"
-
-    1. asd
-    
--->
 
 ## Next steps
 

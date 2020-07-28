@@ -33,7 +33,7 @@ nav:
         - 'Take notes': 'recipes/recipes-notes.md'
         - 'Run a Git wiki': 'recipes/recipes-git-wiki.md'
         - 'Collaborate using Git centralized workflow': 'recipes/recipes-centralized-workflow.md'
-        - 'Manage docs with Gitflow': 'recipes/recipes-gitflow.md'
+        - 'Manage docs with GitHub Flow': 'recipes/recipes-gitflow.md'
         - 'Create an eBook': 'recipes/recipes-pandoc-ebook.md'
         - 'Write a Word doc': 'recipes/recipes-pandoc-word.md'
         - 'Publish a PDF': 'recipes/recipes-pandoc-pdf.md'
