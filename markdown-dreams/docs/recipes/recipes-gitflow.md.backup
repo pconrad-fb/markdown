@@ -28,8 +28,11 @@ This looks like a lot more steps, but remember that you'll be spending most of y
 === "Linux command line"
 
     1. Pull from master to make sure you have the latestchanges.
-    1. You can create a new branch and switch to it with `git checlout -b`$ git checkout -b test-branch 
-Switched to a new branch 'test-branch'
+    1. Create a new branch and switch to it with `git checkout -b`. Example:
+        ```
+        $ git checkout -b test-branch 
+        Switched to a new branch 'test-branch'
+        ```
 
 #### Create a pull request
 

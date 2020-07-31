@@ -21,17 +21,6 @@ You can use Git on the command line, but it's even easier if you use a Git clien
 - [GitHub Desktop](https://desktop.github.com/)
 - [Sourcetree](https://www.sourcetreeapp.com/)
 
-With Git, you can collaborate safely with others, working independently and merging your work as needed. That's why Git is so useful for recipes like these:
-
-- [Distributed workflow](../../recipes/recipes-distributed-workflow/)
-- [Git wiki](../../recipes/recipes-git-wiki)
-- [Gitflow](../../recipes/recipes-gitflow)
-
-!!! note
-    For the examples in this guide, I've decided to use Bitbucket and Sourcetree. Other
-    Git repositories and clients are similar, so you should be fine if you select
-    something else. One thing I like about Sourcetree is the way it handles staging
-    (committing) files.
     
 ## Git concepts
 
@@ -51,20 +40,47 @@ In fact, we don't care about *files* at all in Git. We only care about *changes.
 
 Let's say you have a directory of files you're working on. yes, Git doesn't care about files, but you do!
 
-You open a file in an editor, make some changes, and save the file. If you are not using Git&mdash;if you're just saving files on your computer&mdash;then you're done.
-
-But if you're using Git, then Git will notice the changes you made to the file. If you meant to make those changes, you must *commit* them. This is like "saving changes to Git." When you commit, you type a little note describing the changes so that people know what was done. When you have committed, your changes are stored in the *repository.* It's just like that old central repository, but it's just on your computer.
+You open a file in an editor, make some changes, and save the file. Git will notice the changes you made to the file. If you meant to make those changes, you must *commit* them. This is like "saving changes to Git." When you commit, you type a little note describing the changes so that people know what was done. When you have committed, your changes are stored in the *repository.* It's just like that old central repository, but it's just on your computer.
 
 If you want other people to be able to work on your files, then you need to put them in an online repository (such as Bitbucket, GitHub, or GitLab). This is not *checking in* since the changes are already committed to your local repository. This is called a *push* to a *remote repository*.
 
-Once something is in an online repository, an authorized person can make their own copy of it&mdash;the whole repository&mdash; with a *pull.*
+Once something is in an online repository, an authorized person can *clone* their own copy of the whole repository. As they work, they can *pull* the lagest changes to stay up to date.
 
 If you're working on a repository that already exists online, here are the steps you might use during the day.
 
-1. When you start working on the project, you **pull** to make sure you have the lateest copy of all the changes that other people might have pushed. 
-2. Every time you've made enough changes that you feel like you should "save" your work, you **commit**. This creates a checkpoint you can roll back to if you ever need to.
-3. You might commit many times while you're working on the project. While you're working, you might be previewing your work in a browser, running your code, testing, and so on. Git doesn't mind. Just commit whenever you feel like it.
-4. If other people are working in the same project, you might want to pull from time to time to make sure you have the latest changes. Most of the time, the changes will merge automatically into your local repository, but if there are any conflicts it's nice to be able to resolve them locally.
-4. When your work is ready for other people to look at, you **push** to send the changes to the remote repository.
 
-There's often more to Git than that. There's more info in the recipes that need more info.
+## Branching
+
+Git lets people work in separate work streams called *branches* so that they don't interfere with each other's work. There are different branching strategies. Some are complicated; others are simple. The recipes in this guide use two of them, described in [Git basics](../tools-git-basics/). When you have several branches to work in , Git remembers the state of everything in each of them so that when you switch between them everything is just how you expect it. 
+
+#### Example
+
+In my `test-branch` I added a file called `new-file.md`:
+
+```
+$ ls
+getting-started  img  index.md  index.md.backup  new-file.md  recipes  resources  tools
+```
+
+When I switch to `master`, it's not there:
+
+```
+$ git checkout master 
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+$ ls
+getting-started  img  index.md  index.md.backup  recipes  resources  tools
+```
+
+When I switch back to `test-branch`, it's there:
+
+```
+$ git checkout test-branch 
+Switched to branch 'test-branch'
+$ ls
+getting-started  img  index.md  index.md.backup  new-file.md  recipes  resources  tools
+```
+
+## Next steps
+
+- [Set up Git](../tools-git-setup/)

@@ -26,3 +26,5 @@ static site generator
 
 WYSIWYG
 :   "What you see is what you get"&mdash;an editing experience that mimics the appearance of the document in its final form.
+
+

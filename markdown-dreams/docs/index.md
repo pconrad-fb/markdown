@@ -1,5 +1,26 @@
 # How to Do Things with Markdown
 
+<!--
+TO DO
+
+Talk about how you edit, store, publish
+How these docs work - what's a recipe? Why aren't all the instructions on one page?
+-->
+
+The recipes tell you what components they need.
+I assume you know how to install an editor or other tool.
+We'll talk about Git because there are specific easy ways to use it.
+
+You need to think about:
+- Creating and editing content
+- Where to store it
+  - Local hard drive
+  - DropBox or other backend
+- Whether to use source control
+- Where to publish it
+
+
+
 
 - Not going to fully re-document things like:
 	+ Installation

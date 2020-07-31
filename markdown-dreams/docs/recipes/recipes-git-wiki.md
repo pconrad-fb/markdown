@@ -1,41 +1,31 @@
-# Working with a Git wiki
+# Edit a Git wiki
+
+<!--
+TO DO
+
+Add GH and Linux instructions
+-->
 
 A Git repository comes with a wiki, which makes it possible to collaboratively read and edit documentation. You can create a wiki to document projects or code stored in the repository, or you can just use a repository for its wiki capability.
 
 !!! note
-    Different Git hosts deal with wikis in different ways. At the time of writing, 
-    adding a wiki to a repository on GitHub required either that the repository be 
-    public or a paid version. If you are having trouble adding a wiki to a repository,
-    make sure your repo is public.
+    A Git wiki is a second repository attached to your repository. You clone, pull, 
+    and push t the repository and the wiki separately.
     
-A Git wiki bases the URLs for pages on the file hierarchy. Consider a wiki with the following files:
+A Git wiki uses [Git wiki structure](../../tools/tools-publishing#git-wiki-structure) and it's one way to develop content for publishing in [MkDocs](../recipes-mkdocs/) or [Hugo](../recipes-hugo/)
+     
+## Ingredients
 
-```
-Home.md
-stuff/
-    something.md
-
-```
-
-The URL to `something.md` is: /wiki/stuff/something
+<table>
+  <tr>
+    <td><b><a href="../../tools/tools-editors/">Markdown editor</a></b></td>
+  </tr>
+  <tr>
+    <td><b><a href="../../tools/tools-git-setup/">Git</a></b></td>
+  </tr>
+</table>
     
-## Before you begin
-
-Make sure you have read [Git basics](../../getting-started/getting-started-git-basics).
-
-You'll need:
-
-- Git installed on your computer
-- An account with an online Git host
-- A repository set up on your host such as Bitbucket
-- A Git client such as Sourcetree
-- A text editor or Markdown editor
-
-!!! note
-    This recipe doesn't use branching at all. This might seem strange to anyone
-    who has been using Git for a while.
-    
-## Set up a wiki on your repository
+## Set up a wiki on your hosted repository
 
 The steps are similar for different Git hosts and clients. Here is what those steps look like in Bitbucket and Sourcetree:
 
@@ -44,6 +34,8 @@ The steps are similar for different Git hosts and clients. Here is what those st
 1. Select **Public wiki** and save.  
    ![](../img/recipes-git-wiki-create.png)
    
+## Edit content on the host 
+   
 If you just want to add a few pages to the wiki online, there's no more setup to do! Just go to your repository, click **Wiki**, and you'll see buttons for creating and editing pages. 
 
 !!! hint
@@ -51,15 +43,15 @@ If you just want to add a few pages to the wiki online, there's no more setup to
     For example: `morestuff/newpage.md` adds `newpage.md` in a folder called 
     `morestuff`.
 
-## Cloning the wiki to your local repository
+## Clone the wiki to a local repository
 
-There are advantages to cloning the wiki to your local repository:
+There are advantages to cloning the wiki to a local repository:
 
 - It's much easier to add folders and move files around
 - You can work on it even when you're offlne
 - You can use whatever Markdown editor you want
 
-Although the wiki is associated with a repository, it's actuall a separate repository of its own. You need to clone it separately. Here are the steps for Bitbucket:
+Here are the steps for Bitbucket:
 
 1. Go to your online repository and click **Wiki**.
 2. Click **Clone wiki** then **Clone in Sourcetree**.  
@@ -74,16 +66,15 @@ Although the wiki is associated with a repository, it's actuall a separate repos
     1. In your client (Sourcetree or GitHub Desktop), click **File > Clone** 
        and paste the URL, then click **Clone**.
 
-## Working with the wiki locally
+## Work with the content locally
 
-On your computer, to to the directory where you cloned the wiki. There should be a directory called `wiki` containing a file called `Home.md`&mdash;the Markdown source for the welcome page the wiki displayed when you created it online.
+On your computer, go to the directory where you cloned the wiki. There should be a directory called `wiki` containing a file called `Home.md`&mdash;the Markdown source for the welcome page the wiki displayed when you created it online.
 
-You can now work with the wiki with the following simple steps:
+You can now work with the wiki using either the [Git centralized workflow](../../tools/tools-git-basics#centralized-workflow) or the [GitHub flow](../../tools/tools-git-basics#github-flow)
 
-1. [**Pull**](../../getting-started/getting-started-git-basics/#pull).
-2. Make some changes.
-3. [**Commit**](../../getting-started/getting-started-git-basics/#stage-and-commit).
-4. [**Push**](../../getting-started/getting-started-git-basics/#push).
+## Tutorial
+
+Why is this here? Just to show how to organize content and how it comes out
 
 #### Try creating some content
 
@@ -126,4 +117,4 @@ After you commit and push the changes, take a look in your online wiki.
 
 Try the following recipe, which is very similar:
 
-- [Collaborate using a centralized workflow](../recipes-centralized-workflow/) 
+- [Collaborate using the Git centralized workflow](../recipes-centralized-workflow/) 
