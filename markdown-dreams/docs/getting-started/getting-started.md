@@ -11,6 +11,8 @@ share information on a website or wiki, take notes, or publish an eBook.
 
 ## Ingredients
 
+These are the tools and resources you will use for the recipes in this guide. Each recipe says what it needs. You can install everything or just install what you need as you go along. 
+
 <table>
   <tr>
     <td><b><a href="../../tools/tools-editors/">Markdown editor</a></b></td>
@@ -26,7 +28,7 @@ share information on a website or wiki, take notes, or publish an eBook.
   </tr>
   <tr>
     <td><b><a href="../../tools/tools-git-setup/">Git</a></b></td>
-    <td>Source control made easy. yeah, I said it</td>
+    <td>Source control made easy. yeah, I said it. You need a host, a client, and Git installed on your machine</td>
   </tr>
   <tr>
     <td><b><a href="../../tools/tools-publishing/">Publishing tools</a></b></td>
@@ -34,16 +36,14 @@ share information on a website or wiki, take notes, or publish an eBook.
   </tr>
 </table>
 
-## First steps
-
-Each recipe says what it needs. You can just install what you need as you go along, but here is the minimum startup I recommend:
+If you're not sure, start with the following steps:
 
 1. Install [Pandoc](../../tools/tools-pandoc/).
 2. Choose and install a [Markdown editor](../../tools/tools-editors/).
 3. Set up [Git](../../tools/tools-git-setup/).
 
 !!! hint
-    Some editors detect pandoc, so instaling it first is a good idea.
+    Some editors detect pandoc, so installing it first is a good idea.
 
 ## Things to know
 
@@ -67,12 +67,6 @@ Some of the recipes in this guide use [Git](https://git-scm.com/). Git is very p
 
 **Other documentation tools**
 The point of Markdown is to produce content that can be published and consumed in another format&mdash;originally HTML, and now Word, slides, PDFs, and other formats. You should konw something about these things.
-
-## About the recipes
-
-Just as a lasagna recipe assumes you know how to boil water, the recipes in this guide assume you know some stuff. Each recipe has to be short. So for eample there isn't a copy of the Git workflow and how to Push in every recipe that uses Git. Fortunately, they link to the instructions. In other words, common instructions are in one place but linked to.
-
-The recipes go together. You might use Centralized workflow to manage content you write in Mardkwo along with MCreate a document in Pandoc to publish to a PDF, or you might take content that started out in Notes and turn it into a standalone slide presentation. The goal is for you to understand the pieces and combine them however yo uwant.
 
 ## Next steps
 
