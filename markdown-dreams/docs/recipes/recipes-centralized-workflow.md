@@ -10,6 +10,8 @@ In other words, [Running a Git wiki](../recipes-git-wiki) is a easy way to creat
 
 For non-production content such as specifications, planning documents, newsletters, internal documentation, and the like, you can use a simple single-branch strategy called the centralized Git workflow.
 
+![](../img/git-centralized-workflow.png)
+
 ## Ingredients
 
 
@@ -44,23 +46,23 @@ There's nothing more to it than
 1. [Pick an editor](../../tools/tools-editors/)
 2. [Git centralized workflow](../../tools/tools-git-basics/#centralized-workflow)
 3. [Publish content](../../tools/tools-publishing/):
-	+ [Publish documentation with MkDocs](../recipes-mkdocs.md)
-	+ [Publish a website with Hugo](../recipes-mkdocs.md)
-	+ [Create a document with Pandoc](../recipes-pandoc.md)
+	+ [Publish documentation with MkDocs](../recipes-mkdocs/)
+	+ [Publish a website with Hugo](../recipes-mkdocs/)
+	+ [Create a document with Pandoc](../recipes-pandoc/)
 
 
 
 So, you have your local git repo where ou store MD files
 REmember not to publish there! Publish to the web or a synced folder but not to the repo
 
-The publishing tools are optional. If you're just collaborating on stuff you're reading in your repective MD editors, you don't need them. If you're really publishing a website or some docs, you should consider using [Manage docs with Gitflow](../recipes-gitflow.md).
+The publishing tools are optional. If you're just collaborating on stuff you're reading in your repective MD editors, you don't need them. If you're really publishing a website or some docs, you should consider using [Manage docs with Gitflow](../recipes-gitflow/).
 
 ## Next steps
 
 Check out the following recipes  :
 
-- [Manage docs with Gitflow](../recipes-gitflow.md)
-- [Create an eBook](../recipes-pandoc-ebook.md)
-- [Write a Word doc](../recipes-pandoc-word.md)
-- [Publish a PDF](../recipes-pandoc-pdf.md)
-- [Present slides](../recipes-slides.md)
+- [Manage docs with Gitflow](../recipes-gitflow/)
+- [Create an eBook](../recipes-pandoc-ebook/)
+- [Write a Word doc](../recipes-pandoc-word/)
+- [Publish a PDF](../recipes-pandoc-pdf/)
+- [Present slides](../recipes-slides/)

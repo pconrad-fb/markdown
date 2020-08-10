@@ -6,58 +6,59 @@ This page has the workflows and commands you'll use in the recipes, and some hin
     It might not be worth it to read through this page all the way through. Just 
     refer to the parts you need. The recipes link to them.
 
-## Workflows
+## Branching workflows
 
-Two workflows we'll talk about:
+There are many possible branching workflows, but only two in this guide:
 
 - [Git Centralized Workflow](../../recipes/recipes-centralized-workflow/): all work is done in a single branch
 - [GitHub Flow](../../recipes/recipes-gitflow/): different pieces of work are done in different branches
 
-#### Centralized workflow
+#### Centralized Git workflow
 
-- [Edit a Git wiki](../../recipes/recipes-git-wiki)
-- [Collaborate using centralized Git workflow](../../recipes/recipes-centralized-workflow)
+In the centralized Git workflow, everyone works on a single branch (usually called `master`). Changes are committed to the local repository on each contributor's own computer. From time to time, each user pushes changes to a remote Git repository.
+
+![](../img/git-centralized-workflow.png)
+
+Here are the operations a contributor performs when working in the centralized Git workflow.
 
 --8<-- "centralized-workflow-snippet.html"
 
+In the event that two people create conflicting changes, they can be manually resolved and then merged.
+
+Although this workflow is called "centralized," it doesn't really resemble the old centralized source control model. The central remote repository is not a single source of truth, because every contributor has their own copy of the entire repository.
+
+The following recipes use the centralized Git workflow: 
+
+- [Edit a Git wiki](../../recipes/recipes-git-wiki/)
+- [Collaborate using centralized Git workflow](../../recipes/recipes-centralized-workflow/)
 
 #### GitHub flow
 
-- [Managing docs with GitHub flow](/recipes/recipes-gitflow/)
+In the GitHub flow, you start a new branch based on `master` whenever you start a group of related tasks. How you organize those tasks, and how you decide which ones belong in a branch together, is up to you.
 
-<!--
+![](../img/github-flow.png)
 
-    Pull from the right branch (fixing any merge conflicts).
-    Work on your files in the right branch.
-    Add your changes and commit every time you get to a good checkpoint.
-    Pull, merge, and push to the right branch when its time for other people to see your work.
+Just like in the centralized workflow, you commit changes frequently to your own local repository. When you push to the remote repo, you create a copy of your branch there so that others can review your changes before they are merged back into `master`.
 
--->
+Here's how your day looks in the GitHub flow.
 
 --8<-- "github-flow-snippet.html"
 
-<!--
-1. [**Pull**](../../getting-started-getting-started-git-basics/#pull) from master.
-2. [**Create a new branch**](#create-a-new-branch) for working on this task.
-3. Work on content, using your favorite Markdown editor.
-4. From time to time, [**Stage and commit**](../../getting-started/getting-started-git-basics/#stage-and-commit) your changes.
-5. If others are pushing, you can [**Pull**](../../getting-started-getting-started-git-basics/#pull) while on your branch to get things that were merged to master.
-5. When you want to make your work visible to others, [**Push**](../../getting-started/getting-started-git-basics/#push) to your working branch on the remote repository.
-6. When your work is ready, [**Create a pull request**](#create-a-pull-request) and have your work reviewed. Reviews and approvals happen online at your Git host. If there's more work to do before final approval, you can repeat these steps as needed:
-   1. Work on the content
-   2. Stave and commit
-   3. Push&mdash;it should automatically push to the existing pull request. 
-7. Once your work is approved, [**Merge**](#approve-and-merge) your branch into master on the remote.
--->
+Merge conflicts in the same branch are less likely, because you are creating your own branches and other people don't necessarily work in your branch with you. Before you push your branch to the remote repo, you can [pull](#pull) from `master` again and merge any conflicts locally.
 
 !!! hint
-    After you're done with that part of the project, you can delete your working branch
-    or keep it around for further work. Before starting work on a different part of the
-    project, remember to switch to `master` and pull again.
+    After you've pushed, approved, and merged your work, you can delete
+    your working branch or keep it around for further work. When you start work on a
+    different part of the project, remember to switch to `master` and pull again
+    before creating a new branch.
+    
+The following recipe uses the GitHub flow:
+    
+- [Managing docs with GitHub flow](/recipes/recipes-gitflow/)
 
 ## How to Git
 
-There's more than these, but here are the steps you'll use in those workflows.
+These are the commands that make up the steps in the Git branching workflows.
 
 ### Pull
 
@@ -134,13 +135,25 @@ Git knows when you make changes to your files. When you want to save those chang
     1. Click **Commit to [branch]**.
 
 === "Linux command line"
-    You can stage, commit and add a commit message all in one line.
     
     1. Make sure you're on the right branch in the correct repository.
-    1. Stage and commit the changes, adding a descriptive message:
-    ```
-    $ git commit -am "Type your descriptinve message here."
-    ```
+    1. Use `git status` to see what changes are not yet staged.
+    1. Stage any changes you plan to commit. In many cases, you can 
+       stage all the changes at once like this:
+       ```
+       $ git add *
+       ```
+    1. Commit the changes, adding a descriptive message:
+       ```
+       $ git commit -m "Type your descriptive message here."
+       ```
+       
+    !!! hint
+        If you are changing files but not adding or deleting any files, you can
+        often stage and commit all in one line with `commit -am` like so:
+        ```
+        $ git commit -am "Type your descriptive message here."
+        ```
 
 ### Push
 
@@ -167,7 +180,7 @@ Git knows when you make changes to your files. When you want to save those chang
        $ git push origin master
        ```
        Of course, since git knows what branch you're on and where your remote is, you
-       can often just type ``git push`.
+       can sometimes just type `git push`.
 
 
 
@@ -231,8 +244,6 @@ Git knows when you make changes to your files. When you want to save those chang
     
 ### Create a pull request
 
-These instructions assume that if you're using Sourcetree, you're storing your repo in Bitbucket; if you're using GitHub Desktop, you're storing your repo in GitHub. It's often better that way because the tools are designed to work togeyther. If you're mixing and matching (or using one of those hosts from the Linux command line) you might have to mix and match your instructions too.
-
 === "Bitbucket and Sourcetree"
 
     1. Click **Repository > Create pull request**.
@@ -273,7 +284,7 @@ These instructions assume that if you're using Sourcetree, you're storing your r
      * [new branch]      test-branch -> test-branch
     ```
     2. Copy the URL from the line after `Create a pull request` into a browser.
-    3. Follow the instructions on screen. If you get stuck, you can see some hints in the other tabs.
+    3. Follow the instructions on screen. If you get stuck, you can see some hints in the instructions for Bitbucket or GitHub.
 
 ### Approve and merge
 
@@ -293,75 +304,107 @@ Merge your branch online in the web interface of your Git host.
 
 ## Getting out of trouble
 
+If you get out into the woods with Git, there's usually a way to get back&mdash;but for this kind of magic, you have to go to the command line.
+
 ### Working in the wrong branch
 
-Edited a file in the wrong branch. What youd like to be able to do is undo those changes, switch branches, then re-do them. Actually, it would be even better to lift those changes off of the wrong branch, laying them gently on top of the branch you meant to be in. Fortunately, Git provides a command called stash that does exactly that.
+So you've edited a file in the wrong branch. What you'd like to be able to do is undo those changes, switch branches, then re-do them. Actually, it would be even better to lift those changes off of the wrong branch, laying them gently on top of the branch you meant to be in. Fortunately, Git provides a command called `stash` that does exactly that.
+
+1. Make sure you're in the right directory.
+2. Use `git status` to check what branch you're on and what changes Git knows about.
+2. If necessary, switch to the correct branch. For example:
+
+   ```
+   $ git checkout -b the-branch 
+    Switched to branch 'the-branch'
+    
+   ```
+1. In the branch where you were erroneously working, stash your uncommitted changes:  
+
+   ```
+   $ git stash
+   ```
+   
+1. Switch to the branch you wish you had been working in, and apply the changes there:
+
+   ```
+   $ git stash apply
+   ```
 
 ### Editing the wrong file
 
-Edited a file by mistake. You opened a file to look at it, but then your cat walked across the keyboard. Youre not sure what was added or deleted. You just want to go back to the way things were at the last commit. For this, use checkout.
+You opened a file to look at it, but then your cat walked across the keyboard. You're not sure what was added or deleted. You just want to go back to the way things were at the last commit. For this, use `checkout`.
+
+1. Make sure you're in the right directory.
+2. Use `git status` to check what branch you're on and what changes Git knows about.
+2. If necessary, switch to the correct branch. For example:
+   ```
+   $ git checkout -b the-branch 
+    Switched to branch 'the-branch'
+   ```
+1. Use `git status` to see what files were accidentally modified. For example:
+   ```
+   $ git status
+   On branch master
+   Changes not staged for commit:
+     (use "git add <file>..." to update what will be committed)
+     (use "git checkout -- <file>..." to discard changes in working directory)
+
+       modified:   dont-change-this.md
+   ```
+2. Use `git checkout` to undo the changes. For example:
+   ```
+   git checkout -- dont-change-this.md
+   ```
+
 
 ### Staged too soon
-Added too soon. You edited the right file the right way, but then you added it to the staging area too hastily. You dont want to undo your changes to the file, but you would like to remove it from the next commit. This is one of the uses of reset. You can also use reset to do more drastic rollbacks. You can undo entire commits if you want.
-Use your HEAD
+
+You edited the right file the right way, but then you added it to the staging area too hastily. You don't want to undo your changes to the file, but you would like to remove it from the next commit. This is one of the uses of `reset`. You can also use `reset` to do more drastic rollbacks. You can undo entire commits if you want.
+
+1. Make sure you're in the right directory.
+2. Use `git status` to check what branch you're on and what changes Git knows about.
+2. If necessary, switch to the correct branch. For example:
+   ```
+   $ git checkout -b the-branch 
+    Switched to branch 'the-branch'
+   ```
+1. Use `git status` to see what files were accidentally modified. For example:
+   ```
+   $ git status
+   On branch master
+   Changes to be committed:
+     (use "git reset HEAD <file>..." to unstage)
+
+       renamed:    README.md -> README
+       modified:   dont-commit-this.md
+   ```
+2. Use `git reset` to remove the file from the next commit. For example:
+   ```
+   git reset HEAD dont-commit-this.md
+   ```
 
 ### Merge conflicts
 
-Oh, yeah, I havent covered merge conflicts. Theres only one thing that ever confused me about them: which part is the change Im trying to add, and which part is someone elses change that Im conflicting with? The answer is a concept thats central to Git: whenever you see the word HEAD you should imagine it as a sign that says: YOU ARE HERE. The HEAD is the pointer to where you are workingthe active commit on the current branch. This concept comes in handy when you're reading the syntax reference for a command like reset.
+When Git is unable to automatically merge, it means that two changes happened in the same place in the same file. That means you need to edit the file and decide which of the two changes to keep. 
+
+When you open the file, the merge conflict looks like this:
+
+```
+<<<<<<< HEAD
+Some content that was changed by one person
+=======
+Other content that someone else changed
+>>>>>>> 9af9d3b 
+```
 
 
----
-git reflog
-# you will see a list of every thing you've
-# done in git, across all branches!
-# each one has an index HEAD@{index}
-# find the one before you broke everything
-git reset HEAD@{index}
-# magic time machine
+`HEAD` is a pointer to the last commit in  the branch you're on. The other label can be another branch name or a number representing another commit.
 
-You can use this to get back stuff you accidentally deleted, or just to remove some stuff you tried that broke the repo, or to recover after a bad merge, or just to go back to a time when things actually worked. I use reflog A LOT. Mega hat tip to the many many many many many people who suggested adding it!
+All you need to do is decide which version of the content you want to keep and then delete the merge conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`).
 
+After you've resolved all the changes in that way, just [commit](#stage-and-commit) again.
 
-Oh shit, I committed and immediately realized I need to make one small change!
+### More trouble
 
-# make your change
-git add . # or add individual files
-git commit --amend --no-edit
-# now your last commit contains that change!
-# WARNING: never amend public commits
-
-This usually happens to me if I commit, then run tests/linters... and FML, I didn't put a space after an equals sign. You could also make the change as a new commit and then do rebase -i in order to squash them both together, but this is about a million times faster.
-
-Warning: You should never amend commits that have been pushed up to a public/shared branch! Only amend commits that only exist in your local copy or you're gonna have a bad time.
-
-
-Oh shit, I need to change the message on my last commit!
-
-git commit --amend
-# follow prompts to change the commit message
-
-Stupid commit message formatting requirements.
-Oh shit, I accidentally committed something to master that should have been on a brand new branch!
-
-# create a new branch from the current state of master
-git branch some-new-branch-name
-# remove the last commit from the master branch
-git reset HEAD~ --hard
-git checkout some-new-branch-name
-# your commit lives in this branch now :)
-
-
-Oh shit, I need to undo my changes to a file!
-
-# find a hash for a commit before the file was changed
-git log
-# use the arrow keys to scroll up and down in history
-# once you've found your commit, save the hash
-git checkout [saved hash] -- path/to/file
-# the old version of the file will be in your index
-git commit -m "Wow, you don't have to copy-paste to undo"
-
-When I finally figured this out it was HUGE. HUGE. H-U-G-E. But seriously though, on what fucking planet does checkout -- make sense as the best way to undo a file? :shakes-fist-at-linus-torvalds:
-
-
-https://dangitgit.com/en
+For more help and advice, check out [Dangit, Git!?!](https://dangitgit.com/)

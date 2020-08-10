@@ -5,6 +5,8 @@ Different choices:
 - Pandoc
 - Others from my preso
 
+
+
 ## Ingredients
 
 <table>
@@ -34,10 +36,13 @@ Make sure yoiu have the ingredients for those as well
 
 ## Setting up your site
 
+
+
 - add a theme
 - Themes sometimes add extensions like the Python ones
 - Command for new site
 - Store in git, just local, whatever
+
 
 
 

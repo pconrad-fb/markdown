@@ -2,6 +2,8 @@
 
 Once your team or project reaches a certain size, branching is a good way to keep people from accidentally interfering with each other's work. It's also a great way to stage and test code or content before migrating to production. There are many branching strategies, some of them quite complicated. The one I like, and that I have used for documentation in the past, is called [GitHub Flow](https://scottchacon.com/2011/08/31/github-flow.html). It's simple but effective. Here's how it changes the single-branch **Pull-Work-Commit-Push** steps used in the [Centralized Git Workflow](../recipes/recipes-centralized-workflow/).
 
+![](../img/github-flow.png)
+
 ## What you need
 
 <table>
@@ -51,8 +53,8 @@ The publishing tool is like MkDocs for docs, Hugo for a website, etc. Go see tho
 
 Check out the following recipes  :
 
-- [Manage docs with Gitflow](../recipes-gitflow.md)
-- [Create an eBook](../recipes-pandoc-ebook.md)
-- [Write a Word doc](../recipes-pandoc-word.md)
-- [Publish a PDF](../recipes-pandoc-pdf.md)
-- [Present slides](../recipes-slides.md)
+- [Manage docs with Gitflow](../recipes-gitflow/)
+- [Create an eBook](../recipes-pandoc-ebook/)
+- [Write a Word doc](../recipes-pandoc-word/)
+- [Publish a PDF](../recipes-pandoc-pdf/)
+- [Present slides](../recipes-slides/)

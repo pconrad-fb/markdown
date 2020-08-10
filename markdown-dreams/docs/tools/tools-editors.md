@@ -1,6 +1,6 @@
 # Markdown editors
 
-There are plenty of Markdown tools available:
+Markdown editors let you edit your content and often integrate with conversion and publishing tools. There are a few different types available:
 
 - [Dedicated Markdown editors](#dedicated-markdown-editors) usually let you write and
   edit Markdown code with syntax highlighting, and often have a preview pane or separate
@@ -14,18 +14,20 @@ There are plenty of Markdown tools available:
   to full-featured writing and publishing tools that integrate with source control,
   blogging, or collaboration websites
 
-For blogging, you can get away with a browser-based tool&mdash;in fact, some blogging sites support Markdown already. If you plan to create and manage documentation or other complex writing projects, it makes sense to install a dedicated Markdown editor. If you are adding Markdown to your code development environment, several code editors support Markdown very nicely. 
+For blogging, you can use a [browser-based tool](#browser-based-tools)&mdash;in fact, some blogging sites support Markdown already. If you plan to create and manage documentation or other complex writing projects, it makes sense to install a [dedicated Markdown editor](#dedicated-markdown-editors). If you are adding Markdown to your code development environment, several code editors support Markdown very nicely. 
 
 I have used Joplin and iA Writer, but I use Typora and Ghostwriter most often. 
 
 ## Dedicated Markdown editors
 
-Most dedicated editors are designed so that you edit the Markdown directly, with syntax highlighting to make it easier to see that's going on. That's kind of the original intention behind Markdown, after all: to provide formatting tools that are easy to read and don't require you to lift your fingers from the keys. Two tools in particular stand out:
+Most dedicated editors are designed so that you edit the Markdown directly, with syntax highlighting to make it easier to see that's going on. That's the original intention behind Markdown, after all: to provide formatting tools that are easy to read and don't require you to lift your fingers from the keys. 
+
+For general purposes, many dedicated Markdown editors are fairly similar, differing in only a few features.
+
+Two tools in particular stand out:
 
 - Joplin, a specialized editor for writing notes and to-do lists
 - Typora, an elegant WYSIWYG editor for Markdown
-
-For general purposes, many of these editors are fairly similar, differing in a few features.
 
 ### Byword
 
@@ -49,7 +51,7 @@ For general purposes, many of these editors are fairly similar, differing in a f
 
 ![](../img/tools-joplin.png)
 
-[Joplin](https://joplinapp.org/) (macOS/iOS/Android/Windows/Linux)is an open-surce note-taking and to-do application that syncs to DropBox, OneDrive, and other cloud storage. It includes its own editor, but also supports the external editor of your choice. It supports end-to-end encryption and can import Evernote notebooks.
+[Joplin](https://joplinapp.org/) (macOS/iOS/Android/Windows/Linux) is an open-source note-taking and to-do application that syncs to DropBox, OneDrive, and other cloud storage. It includes an editor, but also supports the external editor of your choice. It offers end-to-end encryption and can import Evernote notebooks.
 
 ### MacDown
 
@@ -83,11 +85,11 @@ Browser-based Markdown tools can be an easy, portable way to write Markdown that
 
 ### Dillinger
 
-[Dillinger](https://dillinger.io/) is an open source online Markdown editor that integrates with DropBox, GitHub, Google Drive, and OneDrive. You can also import from BitBucket, or from Markdown or HTML files from your computer.
+[Dillinger](https://dillinger.io/) is an open source online Markdown editor that integrates with DropBox, GitHub, Google Drive, and OneDrive. You can also import from BitBucket, or upload Markdown and HTML files from your computer.
 
 ### HackMD
 
-[HackMD](https://hackmd.io/) is an online Markdown editor, free for personal use, that integrates with GitHub and includes tooks for creating [slides](https://hackmd.io/c/tutorials/%2Fs%2Fhow-to-create-slide-deck).
+[HackMD](https://hackmd.io/) is an online Markdown editor, free for personal use, that integrates with GitHub and includes tools for creating [slides](https://hackmd.io/c/tutorials/%2Fs%2Fhow-to-create-slide-deck).
 
 ### StackEdit
 

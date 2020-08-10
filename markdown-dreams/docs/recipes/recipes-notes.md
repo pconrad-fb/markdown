@@ -9,6 +9,8 @@ TO DO
   - https://notable.app/#features - like iA
 -->
 
+![](../img/markdown-notes.png)
+
 ## Ingredients
 
 <table>

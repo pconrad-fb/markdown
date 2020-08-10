@@ -13,6 +13,8 @@ A Git repository comes with a wiki, which makes it possible to collaboratively r
     and push t the repository and the wiki separately.
     
 A Git wiki uses [Git wiki structure](../../tools/tools-publishing#git-wiki-structure) and it's one way to develop content for publishing in [MkDocs](../recipes-mkdocs/) or [Hugo](../recipes-hugo/)
+
+You can do eitehr the centralized workflow or gitflow. We're going to do it centralized here.
      
 ## Ingredients
 
@@ -27,14 +29,25 @@ A Git wiki uses [Git wiki structure](../../tools/tools-publishing#git-wiki-struc
     
 ## Set up a wiki on your hosted repository
 
-The steps are similar for different Git hosts and clients. Here is what those steps look like in Bitbucket and Sourcetree:
+The steps are similar for different Git hosts and clients. It's a lot easier to create these on the host. If you want to maintain it on the commend line later that's fine, but to create it you should use the host
 
-1. In a browser, log on to Bitbucket (or your preferred host).
-1. Under "Repository settings" look for "Features" and click **Wiki**
-1. Select **Public wiki** and save.  
-   ![](../img/recipes-git-wiki-create.png)
+=== "Bitbucket and Sourcetree"
+    1. In a browser, log on to Bitbucket.
+	1. Under "Repository settings" look for "Features" and click **Wiki**
+	1. Select **Public wiki** and save.  
+       ![](../img/recipes-git-wiki-create.png)
+
+=== "GitHub and GitHub Desktop"
+    The GitHub documentation on [Wikis](https://docs.gitlab.com/ee/user/project/wiki/)
+    is helpful. Here are the basic steps:
+    
+    1. In a browser, log on to GitHub.
+    1. Click the **Settings** button:  
+       ![](../img/github-settings.png)
+    1. Scroll down to "Features" and select **Wikis**:
+       ![](../img/git-wikis.png)
    
-## Edit content on the host 
+## Edit content on the host    
    
 If you just want to add a few pages to the wiki online, there's no more setup to do! Just go to your repository, click **Wiki**, and you'll see buttons for creating and editing pages. 
 
@@ -51,26 +64,41 @@ There are advantages to cloning the wiki to a local repository:
 - You can work on it even when you're offlne
 - You can use whatever Markdown editor you want
 
-Here are the steps for Bitbucket:
 
-1. Go to your online repository and click **Wiki**.
-2. Click **Clone wiki** then **Clone in Sourcetree**.  
-   ![](../img/recipes-git-repo-bb-clone-wiki.png)
+       
 
-!!! note
-    If you can't find **Clone in Sourcetree** (or, for GitHub, **Open in GitHub
-    Desktop**) in your online repository:
-    
-    1. In your online repository, go to the wiki and look for the URL to
-       clone the wiki repository locally.  
-    1. In your client (Sourcetree or GitHub Desktop), click **File > Clone** 
-       and paste the URL, then click **Clone**.
+=== "Bitbucket and Sourcetree"
+    1. Go to your online repository and click **Wiki**.
+    2. Click **Clone wiki** then **Clone in Sourcetree**.  
+       ![](../img/recipes-git-repo-bb-clone-wiki.png)
+    1. Make sure the local path shows the directory where
+       you want to clone the repository, and click **Clone**.
+       
+=== "GitHub and GitHub Desktop"
+    1. Go to your online repository and click the **Wiki** button:  
+       ![](../img/github-wiki-button.png)
+    1. Copy the **Clone this wiki locally** URL.
+    1. In GitHub Desktop, click **File > Clone repository**.
+    1. Paste the URL, make sure the local path shows the directory where
+       you want to clone the repository, and click **Clone**.
+
+=== "Linux command line"
+    1. Go to your online repository and click **Wiki**.
+    1. Copy the URL (or command and URL) to clone the wiki repository.
+    1. On the command line, navigate to the directory where you want to clone the
+       repository.
+    1. Use `git clone` and the URL to clone the repository. Example:  
+       `git clone https://my_name@bitbucket.org/my_name/markdown-stuff.git/wiki`
+
+
 
 ## Work with the content locally
 
 On your computer, go to the directory where you cloned the wiki. There should be a directory called `wiki` containing a file called `Home.md`&mdash;the Markdown source for the welcome page the wiki displayed when you created it online.
 
 You can now work with the wiki using either the [Git centralized workflow](../../tools/tools-git-basics#centralized-workflow) or the [GitHub flow](../../tools/tools-git-basics#github-flow)
+
+So it's mostly pull, edit, commit, push.
 
 ## Tutorial
 

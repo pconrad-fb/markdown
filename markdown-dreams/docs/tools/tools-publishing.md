@@ -1,105 +1,84 @@
-# Publishing
+# Publishing tools
+
+There are many tools that can take your Markdown to your audience or just convert them for use in other doc tools. We'll focus the Git wiki, the static site generators Hugo and MkDocs, and Pandoc. We'll also touch on tools for creating standalone presentations.
+
+![](../img/publishing.png)
 
 ## Git wiki
 
-
-It's kind
-
-!!! note
-    Different Git hosts deal with wikis in different ways. At the time of writing, 
-    adding a wiki to a repository on GitHub required either that the repository be 
-    public or a paid version. If you are having trouble adding a wiki to a repository,
-    make sure your repo is public.
-    
-See [Edit a Git wiki](../../recipes/recipes-git-wiki/)
-
-
+A Git wiki is a special additional repository attached to your Git code repository. You create and clone a git wiki separately from your main repository. 
 
 ### Git wiki structure
 
-By default, GitHub wikis are flat, with no hierarchy. Inside a repository, you can create folders and place individual wiki pages in them. These pages are simply separate files, where the filename becomes the page name.
+A Git wiki uses folders to organize files. The path to a file is used to create the URL where the content is displayed.
 
-# MkDocs
-
-[MkDocs](https://www.mkdocs.org/) is a static site generator that turns directories of Markdown files into a searchable, presentable website. Customizable themes, many of them provided by the community, provide Markdown extensions for reusing content and for formatting such as tabs and admonitions. 
-
-`Screenshot goes here`
-
-See [Publish documentation with MkDocs](../../recipes/recipes-mkdocs/)
-
-    
-    
-    
-    
-    MkDocs
-        They have themes with different kind of extensions
-        Very cool, extensible, easy, live preview
-    Hugo
-    Pandoc
-        eBook
-        PDF
-        Word
-
-A Git wiki bases the URLs for pages on the file hierarchy. Consider a wiki with the following files:
+A simple directory structure might look like this:
 
 ```
 Home.md
 stuff/
     something.md
-
 ```
 
-The URL to `something.md` is: /wiki/stuff/something
+In that case, the URL to the content in `something.md` is: **/wiki/stuff/something**
 
+See also:
 
-You can also  publish [Slides](../tools-slides/)
+- [Edit a Git wiki](../../recipes/recipes-git-wiki/)
+
 
 ## Hugo
 
+[Hugo](https://gohugo.io/) is an open-source static site generator that includes templates and provides exensibility in the form of *shortcodes,* which provide additional formatting. You can even create your own shortcodes.
+
+See also:
+
+- [Publish a website with Hugo](../../recipes/recipes-hugo/)
+
+## MkDocs
+
+[MkDocs](https://www.mkdocs.org/) is a static site generator that turns directories of Markdown files into a searchable, presentable website. Customizable themes, many of them provided by the community, provide Markdown extensions for reusing content and for formatting such as tabs and admonitions. 
+
+See also:
+
+- [Publish documentation with MkDocs](../../recipes/recipes-mkdocs/)
+
 ## Pandoc
 
-Everyone who installs a Markdown editor should install Pandoc.
+[Pandoc](https://pandoc.org/) is a tool that can convert between Markdown and a number of formats. You can use Pandoc to create Word and Powerpoint documents, PDFs, HTML, and standalone slide presentations that work with tools like DZslides. For longer documents, Pandoc has options for concatenating Markdown files together.
 
-Pandoc
+Pandoc includes formatting tricks that let you do things like create columns or scale images, and can use stylesheets from existing documents to give your content a specific look and feel.
 
-- Concatenate files
-- Extra directives it can do
-- Make HTML
-- eBook
-- PDF
-- Word
-- Slides - see slides recipe
-- Grab HTML as MD
+You can also convert from various formats to Markdown, including dong things like grabbing a web page as a Markdown file. You can even [try it online](https://pandoc.org/try/).
 
-https://pandoc.org/try/
+See also:
 
-### Slides in Pandoc
-Making Slides with Pandoc: the Basics
+- [Create a Word document](../../recipes/recipes-pandoc-word/)
+- [Create an eBook](../../recipes/recipes-pandoc-ebook/)
+- [Create a PDF](../../recipes/recipes-pandoc-pdf/)
+- [Grab a web page](../../recipes/recipes-pandoc-web/)
+- [Create a Powerpoint presentation](../../recipes/recipes-slides/)
+- [Create a DZSlides presentation](../../recipes/recipes-slides-dzslides/)
 
-Pandoc is an everything-to-everything converter, and one of its neatest tricks is turning Markdown into slides. If you can do simple things on the command line, you will have no trouble: Pandoc is easy to install and use.
+## Presentation tools
 
-When using Pandoc, you can start your Markdown file with YAML metadata or a simple block like this:
+Here are two tools that you can use for in-browser presentations.
 
-% Title
-% Author Name
-% Date
+### DZSlides
 
-Then write some Markdown for your slides. Pandoc uses the following rule to figure out what header level to use for slide titles:
+[DZSlides](http://paulrouget.com/dzslides/) is a single page, HTML-based slide presentation template. Pandoc can generate a DZSlides presentation from a Markdown file.
 
-    By default, the slide level is the highest header level in the hierarchy that is followed immediately by content, and not another header, somewhere in the document. In the example above, level 1 headers are always followed by level 2 headers, which are followed by content, so 2 is the slide level. (source)
+See also:
 
-That seems a little complicated, so I played with the Markdown a bit to see what worked in different presentation formats. In general, an H1 or H2 header works for a section header or slide title. Most other Markdown works as you would expect. Some presentation tools work best if you separate slides with three hyphens (---).
+- [Create a DZSlides presentation](../../recipes/recipes-slides-dzslides/)
 
-Building a presentation with Pandoc is simple:
+### Remark
 
-pandoc -t <format> -s myslides.md -o myslides.htm
+[Remark](https://remarkjs.com/#1) is an in-browser presentation tool made from Javascript, HTML, CSS, and, of course, Markdown. The slideshow lives in a `<textarea>` tag where you can add and edit Markdown directly.
 
-Pandoc can build slides from several formats. I tried a few including S5, Slidy, and slideous. Ill focus on two in particular: DZslides and Powerpoint.
+See also:
 
-## Standalone presentation tools
+- [Create a Remark presentation](../../recipes/recipes-slides-remark/)
 
-Remark
-DZslides
 
-If you want to do one of those slick presentations with big images and very few words, [DZslides](http://paulrouget.com/dzslides/) is an easy way to do it.
 
