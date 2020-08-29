@@ -60,6 +60,15 @@ See also:
 - [Create a Powerpoint presentation](../../recipes/recipes-slides/)
 - [Create a DZSlides presentation](../../recipes/recipes-slides-dzslides/)
 
+## FTP
+
+When you create a website with Hugo or MkDocs, you'll use FTP to upload the files to the web. You can do this from the command line, but it's much easier to choose an application that gives a nice UI and lets you save bookmarks. Here are a few:
+
+- [FileZilla](https://filezilla-project.org/) - a free, open source FTP tool for macOS
+  and Windows
+- [gFTP](https://en.wikipedia.org/wiki/GFTP) - the default Linux option
+- [Transmit](https://panic.com/transmit/) - a commercial app for macOS
+
 ## Presentation tools
 
 Here are two tools that you can use for in-browser presentations.

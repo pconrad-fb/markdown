@@ -1,11 +1,14 @@
 # Publish documentation with MkDocs
 
-Different choices:
+[MkDocs](https://www.mkdocs.org/) is a static site generator designed for documentation. It's fairly easy to use, though it does require some work on the command line. Like some other tools, it uses the [Git wiki structure](../../tools/tools-publishing#git-wiki-structure)&mdash;which means you can even use [Git wiki](../recipes-git-wiki/) to develop the content.
 
-- Pandoc
-- Others from my preso
+To install MkDocs, use your operating system's package manager:
 
+- Linux: [apt-get](https://help.ubuntu.com/community/AptGet/Howto) or [yum](http://yum.baseurl.org/)
+- macOS: [Homebrew](https://brew.sh/)
+- Windows: [Chocolatey](https://chocolatey.org/)
 
+Because MkDocs is based on Python, you can also install manually install it using the `pip` tool.
 
 ## Ingredients
 
@@ -21,30 +24,59 @@ Different choices:
   </tr>
 </table>
 
-!!! hint
-    MkDocs works best with Markdown files that are organized in  
-    [Git wiki structure](../../tools/tools-publishing#git-wiki-structure).
-    You can even use [Git wiki](../recipes-git-wiki/) to develop the content.
-
 This recipe goes well with:
 
 - Working by yourself on your local hard drive
 - [Centralized Git workflow](../recipes-centralized-workflow/)
 - [GitHub flow](../recipes-gitflow/)
 
-Make sure yoiu have the ingredients for those as well
+## Creating a project
 
-## Setting up your site
+You can create a new doc set just by typing `mkdocs new my-project` and starting to add content. Of course, if you plan to use one of the Git workflows, you should run this command inside your local Git repository. The `mkdocs new` command sets up a directory that contains two things:
+
+- A directory called `docs` containing `index.md`
+- A file called `mkdocs.yml` that you use for configuring your project.
+
+As you might have guessed, `index.md` is a congratulatory default first page, and you can change it, add directories and files, and start building the site in the `docs` directory.
+
+## Live preview
+
+The command `mkdocs serve` starts a webserver that lets you preview your content as you create it. Whenever you save a Markdown file, MkDocs does its best to update the preview&mdash;sometimes if you change the site navigation, it can't keep up. When that happens, just use Control-C to stop the server and then type the command again to start it.
+
+![](../img/live-preview.png)
+
+When the webserver starts, it provides information about any broken links in your content, any files that are unused, and where to point your browser to see the content. Here's an abbreviated version of some output I got while working on this website:
+
+```
+$ mkdocs serve
+INFO    -  Building documentation... 
+INFO    -  Cleaning site directory 
+INFO    -  The following pages exist in the docs directory, but are not included in the "nav" configuration:
+  - getting-started/index.md
+  - recipes/index.md
+WARNING -  Documentation file 'recipes/recipes-centralized-workflow.md' contains a link to 'recipes-slides.md' which is not found in the documentation files. 
+INFO    -  Documentation built in 1.82 seconds 
+[I 200728 20:45:18 server:296] Serving on http://127.0.0.1:8000
+INFO    -  Serving on http://127.0.0.1:8000
+[I 200728 20:45:18 handlers:62] Start watching changes
+INFO    -  Start watching changes
+[I 200728 20:45:18 handlers:135] Browser Connected: http://127.0.0.1:8000/recipes/recipes-centralized-workflow/
+INFO    -  Browser Connected: http://127.0.0.1:8000/recipes/recipes-centralized-workflow/
+```
 
 
+## Adding a theme
 
-- add a theme
-- Themes sometimes add extensions like the Python ones
-- Command for new site
-- Store in git, just local, whatever
+The default look is fine, but you'll probably want to choose a [theme](https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes). Themes don't just change the look of the site&mdash;they sometimes add extensions and capabilities (such as the [Python Markdown Extensions](https://python-markdown.github.io/extensions/)).
 
+You can add a theme, activate extensions, and set up site navigation in the site configuration file `mkdocs.yml`.
 
+!!! hint
+    You don't have to set up navigation manually. If you don't, MkDocs provides
+    fairly sensible navigation automatically. But the option is there if you 
+    need that level of control.
 
+Here's an abbreviated version of my `mkdocs.yml` file:
 
 ```
 
@@ -55,16 +87,10 @@ theme:
 
 markdown_extensions:
   - admonition
-  - pymdownx.details
-  - pymdownx.superfences
-  - def_list
-  - pymdownx.tasklist:
-      custom_checkbox: true
-  - meta
-  - pymdownx.tabbed
   - pymdownx.highlight:
       use_pygments: true
   - pymdownx.snippets
+        base_path: 'snippets/'
 
 nav:
     - 'How to do things with Markdown': 'index.md'
@@ -76,73 +102,51 @@ nav:
     - 'Recipes':
         - 'Overview': 'recipes/index.md'
         - 'Run a Git wiki': 'recipes/recipes-git-wiki.md'
-        - 'Collaborate with a distributed workflow': 'recipes/recipes-distributed-workflow.md'
-        - 'Manage docs with Gitflow': 'recipes/recipes-gitflow.md'
-        - 'Create an eBook': 'recipes/recipes-pandoc-ebook.md'
-        - 'Write a Word doc': 'recipes/recipes-pandoc-word.md'
-        - 'Publish a PDF': 'recipes/recipes-pandoc-pdf.md'
-        - 'Present slides': 'recipes/recipes-slides.md'
     - 'Resources': 'resources/index.md'
-
-
 ```
 
 
-- Talk about how creating the Nav was interesting - have to restart the server when you do
-- Pick a snippets directory
-
-- Snippets, okay, but base_path is a pain. They don't tell you wnat it is. It's relative to the directory you crated with the `mkdocs new` or whatever. So my recommendation is to make a dir called `snippets` and then do this:
-  ```
-    - pymdownx.snippets:
-        base_path: 'snippets/'
-  ```
+To save length, I stripped out a lot of the navigation, but you get the idea.
 
 ## Working with content
 
-- Extra markdown stuff like short codes or extensions
-- 
-- Show screen shot of previewing live in MkDocs
+For the most part, working with content is what you would expect. It's just Markdown in Git wiki structure, using the workflow of your choice. Here are a few tips:
 
-- You can use HTML but not MD inside HTML
-- Links are a pain but it tells you what links are broken
-- How to do themes
-- Local preview keeps up wiht changes but you have to restart if you change the nav or add a page
+- Links take some getting used to. Each link is relative based on the location of the
+  page in which the link appears. Remember, each file is treated as a folder in the
+  browser. To link to the "Source control" page from "Run a Git wiki" in the above
+  navigational structure, you would add the following link:   
+  `[Source control](../../tools/tools-git.md)`  
+  If you have trouble with a link, look at the output when you run `mkdocs serve`.
+- Because all HTML is valid Markdown, you can use HTML. However, you can't use
+  Markdown inside a block of HTML.
+- If you choose a theme that includes features like snippets and admonitions, then
+  you can do things outside the bounds of normal Markdown. This is very useful, but
+  makes it likely that you can't use your Markdown source files with other toolchains
+  (unless you take the fun stuff out).
 
   Also, you have to rrestart the server when you add or change a snippet, and also if you start using stnippets, you're fgettting away from a situation where you can publish in other formats.
 
+### Snippets
+
+If you use snippets, the location of the files you include is relative to the top-level directory of your project (`my-project` for example). It's a good idea to create a directory for snippets and then define it in the `base_path` variable in your `mkdocs.yml` file. 
+
+I created a directory called `snippets` and specified it as shown above. That way, I can include snippets using only the filename and I don't have to think about a relative path from the page where I am using the snipppet:
 
 ```
-$ mkdocs serve
-INFO    -  Building documentation... 
-INFO    -  Cleaning site directory 
-INFO    -  The following pages exist in the docs directory, but are not included in the "nav" configuration:
-  - getting-started/index.md
-  - recipes/index.md
-  - recipes/recipes-distributed-workflow.md
-  - recipes/recipes-setup-git.md
-  - resources/resources-glossary.md
-  - tools/index.md 
-WARNING -  Documentation file 'recipes/recipes-centralized-workflow.md' contains a link to 'recipes-gitflow.md' which is not found in the documentation files. 
-WARNING -  Documentation file 'recipes/recipes-centralized-workflow.md' contains a link to 'recipes-pandoc-ebook.md' which is not found in the documentation files. 
-WARNING -  Documentation file 'recipes/recipes-centralized-workflow.md' contains a link to 'recipes-pandoc-word.md' which is not found in the documentation files. 
-WARNING -  Documentation file 'recipes/recipes-centralized-workflow.md' contains a link to 'recipes-pandoc-pdf.md' which is not found in the documentation files. 
-WARNING -  Documentation file 'recipes/recipes-centralized-workflow.md' contains a link to 'recipes-slides.md' which is not found in the documentation files. 
-WARNING -  Documentation file 'recipes/recipes-gitflow.md' contains a link to 'recipes-gitflow.md' which is not found in the documentation files. 
-WARNING -  Documentation file 'recipes/recipes-gitflow.md' contains a link to 'recipes-pandoc-ebook.md' which is not found in the documentation files. 
-WARNING -  Documentation file 'recipes/recipes-gitflow.md' contains a link to 'recipes-pandoc-word.md' which is not found in the documentation files. 
-WARNING -  Documentation file 'recipes/recipes-gitflow.md' contains a link to 'recipes-pandoc-pdf.md' which is not found in the documentation files. 
-WARNING -  Documentation file 'recipes/recipes-gitflow.md' contains a link to 'recipes-slides.md' which is not found in the documentation files. 
-INFO    -  Documentation built in 1.82 seconds 
-[I 200728 20:45:18 server:296] Serving on http://127.0.0.1:8000
-INFO    -  Serving on http://127.0.0.1:8000
-[I 200728 20:45:18 handlers:62] Start watching changes
-INFO    -  Start watching changes
-[I 200728 20:45:18 handlers:135] Browser Connected: http://127.0.0.1:8000/recipes/recipes-centralized-workflow/
-INFO    -  Browser Connected: http://127.0.0.1:8000/recipes/recipes-centralized-workflow/
+--8<-- "github-flow-snippet.html"
 ```
 
 
-## Publishing
+## Building and publishing
 
-- generating the site
-- FTP it somewhere?
+The `mkdocs build` command builds the website in a directory called `site`. To publish the site, use FTP to transfer the contents of that directory to a folder on a webserver.
+
+!!! hint
+    To prevent Git from tracking changes to the `site` directory, create a file called
+    `.gitignore` at the top level directory of the local repository with the following
+    contents:
+    
+    ```
+    site/
+    ```

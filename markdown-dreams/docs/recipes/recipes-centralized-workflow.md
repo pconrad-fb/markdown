@@ -12,8 +12,9 @@ For non-production content such as specifications, planning documents, newslette
 
 ![](../img/git-centralized-workflow.png)
 
-## Ingredients
+If you're publishing a complex website or documentation set with a team of collaborators, you should consider using [Manage docs with Gitflow](../recipes-gitflow/) instead.
 
+## Ingredients
 
 <table>
   <tr>
@@ -37,25 +38,19 @@ For non-production content such as specifications, planning documents, newslette
     
 ## Working with content
 
-This uses the centralized Git workflow. Once you have tried each of the steps, you'll see it's easy. Make sure you have Git set up and try each step below.
+This recipe uses the centralized Git workflow. [Pick an editor](../../tools/tools-editors/), then make sure you have Git set up and try each step below. The steps work together like a heartbeat that keeps content safe and synchronized for all collaborators.
 
 --8<-- "centralized-workflow-snippet.html"
 
-There's nothing more to it than
+If you need to [Publish content](../../tools/tools-publishing/), you can use one of these recipes:
 
-1. [Pick an editor](../../tools/tools-editors/)
-2. [Git centralized workflow](../../tools/tools-git-basics/#centralized-workflow)
-3. [Publish content](../../tools/tools-publishing/):
-	+ [Publish documentation with MkDocs](../recipes-mkdocs/)
-	+ [Publish a website with Hugo](../recipes-mkdocs/)
-	+ [Create a document with Pandoc](../recipes-pandoc/)
++ [Publish documentation with MkDocs](../recipes-mkdocs/)
++ [Publish a website with Hugo](../recipes-mkdocs/)
++ [Create a document with Pandoc](../recipes-pandoc/)
 
-
-
-So, you have your local git repo where ou store MD files
-REmember not to publish there! Publish to the web or a synced folder but not to the repo
-
-The publishing tools are optional. If you're just collaborating on stuff you're reading in your repective MD editors, you don't need them. If you're really publishing a website or some docs, you should consider using [Manage docs with Gitflow](../recipes-gitflow/).
+!!! hint
+    Remember not to publish content into a Git repository. The repo is only for storing
+    your Markdown and other source files.
 
 ## Next steps
 

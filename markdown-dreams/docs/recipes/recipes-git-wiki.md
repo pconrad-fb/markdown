@@ -13,8 +13,6 @@ A Git repository comes with a wiki, which makes it possible to collaboratively r
     and push t the repository and the wiki separately.
     
 A Git wiki uses [Git wiki structure](../../tools/tools-publishing#git-wiki-structure) and it's one way to develop content for publishing in [MkDocs](../recipes-mkdocs/) or [Hugo](../recipes-hugo/)
-
-You can do eitehr the centralized workflow or gitflow. We're going to do it centralized here.
      
 ## Ingredients
 
@@ -29,7 +27,7 @@ You can do eitehr the centralized workflow or gitflow. We're going to do it cent
     
 ## Set up a wiki on your hosted repository
 
-The steps are similar for different Git hosts and clients. It's a lot easier to create these on the host. If you want to maintain it on the commend line later that's fine, but to create it you should use the host
+The easiest way to set up the wiki is by logging onto your Git host. 
 
 === "Bitbucket and Sourcetree"
     1. In a browser, log on to Bitbucket.
@@ -58,14 +56,14 @@ If you just want to add a few pages to the wiki online, there's no more setup to
 
 ## Clone the wiki to a local repository
 
-There are advantages to cloning the wiki to a local repository:
+There are advantages to working with wiki files locally, on your computer:
 
 - It's much easier to add folders and move files around
-- You can work on it even when you're offlne
+- You can work on it even when you're offline
 - You can use whatever Markdown editor you want
+- Others can collaborate with you
 
-
-       
+To work on the wiki locally, clone the wiki to a local repository:      
 
 === "Bitbucket and Sourcetree"
     1. Go to your online repository and click **Wiki**.
@@ -90,19 +88,15 @@ There are advantages to cloning the wiki to a local repository:
     1. Use `git clone` and the URL to clone the repository. Example:  
        `git clone https://my_name@bitbucket.org/my_name/markdown-stuff.git/wiki`
 
-
-
 ## Work with the content locally
 
 On your computer, go to the directory where you cloned the wiki. There should be a directory called `wiki` containing a file called `Home.md`&mdash;the Markdown source for the welcome page the wiki displayed when you created it online.
 
-You can now work with the wiki using either the [Git centralized workflow](../../tools/tools-git-basics#centralized-workflow) or the [GitHub flow](../../tools/tools-git-basics#github-flow)
-
-So it's mostly pull, edit, commit, push.
+You can now work with the wiki using the [Git centralized workflow](../../tools/tools-git-basics#centralized-workflow) or the [GitHub flow](../../tools/tools-git-basics#github-flow), using the familiar cycle of pull, edit, commit, push.
 
 ## Tutorial
 
-Why is this here? Just to show how to organize content and how it comes out
+Here's a quick tutorial that shows how to organize pages in the wiki.
 
 #### Try creating some content
 
@@ -131,7 +125,7 @@ stuff/
 
 #### Take a look
 
-After you commit and push the changes, take a look in your online wiki.
+After you commit and push the changes, take a look in your online wiki:
 
 1. Go to your online repository and click **Wiki**.
 2. View the page tree of the wiki. For example:

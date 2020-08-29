@@ -79,9 +79,9 @@ Some of the recipes in this guide involve at least some typing on the command li
 **Working with a package manager**  
 Installing some tools requires using one of the following common package managers:
 
-  - Windows: [Chocolatey](https://chocolatey.org/)
-  - macOS: [Homebrew](https://brew.sh/)
-  - Linux: [apt-get](https://help.ubuntu.com/community/AptGet/Howto) or [yum](http://yum.baseurl.org/)
+- Linux: [apt-get](https://help.ubuntu.com/community/AptGet/Howto) or [yum](http://yum.baseurl.org/)
+- macOS: [Homebrew](https://brew.sh/)
+- Windows: [Chocolatey](https://chocolatey.org/)
   
 A package manager can make it easy to install several packages at once. For example:
 

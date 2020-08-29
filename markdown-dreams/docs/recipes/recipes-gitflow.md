@@ -28,8 +28,7 @@ Once your team or project reaches a certain size, branching is a good way to kee
 
 ## Working with content
 
-This uses the GitHub Flow.
-
+[Pick an editor](../../tools/tools-editors/), then make sure you have Git set up and try each step below. The steps work together like a heartbeat that keeps content safe and synchronized for all collaborators.
 --8<-- "github-flow-snippet.html"
 
 !!! hint
@@ -37,17 +36,16 @@ This uses the GitHub Flow.
     or keep it around for further work. Before starting work on a different part of the
     project, remember to switch to `master` and pull again.
     
-There's nothing more to it than
+If you need to [Publish content](../../tools/tools-publishing/), you can use one of these recipes:
 
-1. [Pick an editor](../../tools/tools-editors/)
-2. [GitHub flow](../../tools/tools-git-basics/#github-flow)
-3. [Publish content](../../tools/tools-publishing/)
++ [Publish documentation with MkDocs](../recipes-mkdocs/)
++ [Publish a website with Hugo](../recipes-mkdocs/)
++ [Create a document with Pandoc](../recipes-pandoc/)
 
-So, you have your local git repo where ou store MD files
-REmember not to publish there! Publish to the web or a synced folder but not to the repo
-   
-   
-The publishing tool is like MkDocs for docs, Hugo for a website, etc. Go see those recipes
+!!! hint
+    Remember not to publish content into a Git repository. The repo is only for storing
+    your Markdown and other source files.
+
 
 ## Next steps
 

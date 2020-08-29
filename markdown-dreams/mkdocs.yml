@@ -34,7 +34,7 @@ nav:
         - 'Edit a Git wiki': 'recipes/recipes-git-wiki.md'
         - 'Collaborate using Git centralized workflow': 'recipes/recipes-centralized-workflow.md'
         - 'Manage docs with GitHub Flow': 'recipes/recipes-gitflow.md'
-        - 'Publish a website with Hugo': 'recipes/recipes-hugo.md'
+#        - 'Publish a website with Hugo': 'recipes/recipes-hugo.md'
         - 'Publish documentation with MkDocs': 'recipes/recipes-mkdocs.md'
         - 'Create a Word document': 'recipes/recipes-pandoc-word.md'
         - 'Create an eBook': 'recipes/recipes-pandoc-ebook.md'
