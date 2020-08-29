@@ -1,0 +1,30 @@
+# Getting started
+
+You can start working with Markdown just by opening your favorite text editor and starting to type, but you probably want to do more than that. You might want to 
+share information on a website or wiki, take notes, or publish an eBook. You'll find it easiest to follow the recipes in this guide if you are comfortable with the following topics:
+
+**Markdown Syntax**  
+Although some tools provide a WYSIWYG experience, knowing how to write [Markdown](https://www.markdownguide.org/basic-syntax/) directly will help you work more quickly and easily with a wider variety of tools. 
+
+**The command line**  
+Most of the recipes in this guide involve at least some typing on the command line, if only to install tools. 
+
+**Working with a package manager**  
+Installing the tools requires using one of the following common package managers:
+
+  - Windows: [Chocolatey](https://chocolatey.org/)
+  - macOS: [Homebrew](https://brew.sh/)
+  - Linux: [apt-get](https://help.ubuntu.com/community/AptGet/Howto) or [yum](http://yum.baseurl.org/)
+
+**Git**  
+Some of the recipes in this guide use [Git](https://git-scm.com/). 
+
+## Next steps
+
+- Install a [Markdown editor](../tools/tools-editors)
+- Consider your [Storage and source control](../tools/tools-storage/) needs
+- Think about [Publishing](../tools/tools-publishing) possibilities
+
+Or just jump into the [Recipes](../recipes/)!
+
+
