@@ -1,6 +1,6 @@
 # Create a DZSlides presentation
 
-
+You can use Pandoc to create a standalone slide presentation in DZSlides format, which is useful for presenting when you aren't sure what software will be available. DZSlides creates bold, attractive slides that discourage the use of too much text.
 
 ## Ingredients
 
@@ -11,14 +11,25 @@
   <tr>
     <td><b><a href="../../tools/tools-publishing/#pandoc">Pandoc</a></b></td>
   </tr>
+    <tr>
+    <td>A browser</td>
+  </tr>
 </table>
 
 
-## DZslides
+## Markdown for DZSlides
 
-If you want to do one of those slick presentations with big images and very few words, DZslides is an easy way to do it.
+Start your Markdown file with YAML metadata or a simple block like this:
 
-Heres some sample Markdown:
+```
+% Title
+% Author Name
+% Date
+```
+
+DZSlides uses the horizontal rule (`---`) as a separator between slides. A level one or level two heading is a section title.
+
+Here's some sample Markdown:
 
 ```
 ---
@@ -27,7 +38,7 @@ Heres some sample Markdown:
 
 ---
 
-Normal Text for Slide Title
+Normal Text or Slide Title
 
 - Bullet
 - Bullet
@@ -35,19 +46,57 @@ Normal Text for Slide Title
 ---
 ```
 
-DZslides uses an H1 or H2 as a section header, which you will probably mostly have on a slide by itself. Normal text is big enough for a title or announcement on a slide.
+Normal text is big enough for a title or announcement on a slide.
 
 ![](../img/slides-dzslides.png)
 
-The layout of slides in DZslides is bold and simple; you probably wont find yourself using tables or columns a lot.
+The layout of slides in DZslides is bold and simple; you probably won't find yourself
+using tables or columns a lot.
 
-Once you have created your slides in Markdown, build them with Pandoc:
+### Special Pandoc formatting
 
-pandoc -t dzslides -s myslides.md -o myslides.htm
+Pandoc includes a number of formatting tricks that you might find useful. One of the most useful is fenced div syntax, which uses groups of colon characters as shorthand. 
 
-The -s option tells Pandoc to create a standalone presentation, including all the CSS, HTML, and JavaScript needed to display it. You can view the resulting HTML file in a browser.
+The curly braces let you define *attributes* such as identifiers, classes, and key/value pairs on headers, images, and a few other elements in Pandoc. In the above example, the attributes specify the names and widths of the divs.
+
+### Images
+
+When your Markdown includes images, use relative paths. For example:
+
+```
+![An image](../images/whatever.png)
+```
+
+In the above example, the `images` directory is at the same level as the file containing the Markdown file; the relative path goes up a directory from the Markdown file and then down into the `images` directory to find the image.
+
+When Pandoc follows these relative links, it starts from the directory where you typed the `pandoc` command. If you want Pandoc to find your images, either run the command from a directory where the relative links to the images make sense, or copy the images to a place where the relative links can find them.
+
+After you create the presentation, which is an HTML file, you need to keep the images and the presentation together. If you copy your presentation to a thumb drive without the images, the images won't work. 
+
+!!! hint
+    It's a good idea to create the Markdown presentation in a folder with all the images
+    it needs, then use Pandoc to build the presentation in the same folder. You can copy
+    the entire folder wherever you need it, knowing that all the images for the
+    presentation will work.
+
+You can use an attribute to scale an image:
+
+```
+![Alt text](bench.jpg){width=25%}
+```
 
 ![](../img/slides-dzslides-images.png)
 
-Remember, since its HTML, you need to keep the images and the presentation together. If you copy your presentation to a thumb drive without the images, you will be unhappy. Its a good idea to create the Markdown presentation in a folder with all the images it needs, make sure it works in your favorite Markdown editors preview mode, then use Pandoc to build the presentation in the same folder. You can copy the folder wherever you need it, knowing that all the images are there.
+When Pandoc renders the image, it is scaled to a percentage of the container where it resides (the slide, for example). The alt text is used for a caption.
+
+## Creating the presentation
+
+The command for creating the document is simple. With a single Markdown file, it looks like this:
+
+```
+pandoc -t dzslides -s myslides.md -o myslides.htm
+
+```
+
+The `-s` option tells Pandoc to create a standalone presentation, including all the CSS, HTML, and JavaScript needed to display it. You can view the resulting HTML file in a browser.
 

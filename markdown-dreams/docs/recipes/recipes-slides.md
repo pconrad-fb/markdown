@@ -1,6 +1,6 @@
-# Create a standalone presentation
+# Create a PowerPoint presentation
 
-
+You can use Pandoc to create a presentation for display and editing in PowerPoint, for upload to Google Drive, or for use with other publishing tools.
 
 ## Ingredients
 
@@ -9,48 +9,36 @@
     <td><b><a href="../../tools/tools-editors/">Markdown editor</a></b></td>
   </tr>
   <tr>
-    <td><b><a href="../../tools/tools-publishing/#pandoc">Pandoc</a></b></td>
+    <td><b><a href="../../tools/tools-pandoc/">Pandoc</a></b></td>
   </tr>
-  <tr>
-    <td><b>Powerpoint, Google Drive, or LibreOffice</b></td>
+   <tr>
+    <td><b>PowerPoint, Google Drive, or LibreOffice</b></td>
   </tr>
 </table>
 
+## Markdown for PowerPoint slides
 
-## Slides
+Start your Markdown file with YAML metadata or a simple block like this:
 
-Making Slides with Pandoc: the Basics
-
-Pandoc is an everything-to-everything converter, and one of its neatest tricks is turning Markdown into slides. If you can do simple things on the command line, you will have no trouble: Pandoc is easy to install and use.
-
-When using Pandoc, you can start your Markdown file with YAML metadata or a simple block like this:
-
+```
 % Title
 % Author Name
 % Date
+```
 
-Then write some Markdown for your slides. Pandoc uses the following rule to figure out what header level to use for slide titles:
+Pandoc uses a complicated rule to figure out what header level to use for slide titles, but it boils down to this:
 
-    By default, the slide level is the highest header level in the hierarchy that is followed immediately by content, and not another header, somewhere in the document. In the example above, level 1 headers are always followed by level 2 headers, which are followed by content, so 2 is the slide level. (source)
+- Use heading level one (`#`) for a section title
+- Use heading level two (`##`) for a slide title
 
-That seems a little complicated, so I played with the Markdown a bit to see what worked in different presentation formats. In general, an H1 or H2 header works for a section header or slide title. Most other Markdown works as you would expect. Some presentation tools work best if you separate slides with three hyphens (---).
-
-Building a presentation with Pandoc is simple:
-
-pandoc -t <format> -s myslides.md -o myslides.htm
-
-### Powerpoint
-
-With Pandoc, you can go from Markdown directly to Powerpoint. This method offers a great deal of formatting flexibility. Columns, tables, sub-bullets, and images come out just the way you would expect them to look. I had no trouble opening a Pandoc-rendered .pptx file in Powerpoint or importing it into Google Slides.
-
-![](../img/slides-pandoc-powerpoint.png)
-
-Here is some sample Markdown:
+For example:
 
 ```
 # Section Title
 
-## Slide TitleText on a slide:
+## Slide Title
+
+Text on a slide:
 
 * Bullet
 * Bullet
@@ -61,24 +49,26 @@ Speaker notes go here
 :::
 ```
 
-For Powerpoint slides, Pandoc doesn’t require the hyphen separator. The above Markdown contains two slides: one with an H1 as a section title and another that uses an H2 for the slide title. Notice the ::: — Pandoc’s fenced div syntax, which lets you do a lot of tricks in various formats. Here, it is just used to delineate the speaker notes.
+The above Markdown contains two slides: 
 
-The Pandoc command to build a .pptx file is simple:
+- A section title slide 
+- A slide with a level two heading for the title
 
-pandoc myslides.md -o myslides.pptx
+You could add another slide by appending a level one or level heading at the end.
 
-As you would expect, you don’t need the -s flag (because what is the alternative to a standalone Powerpoint presentation?) and you can open the resulting .pptx file in Powerpoint. But there’s one more piece of magic:
+Notice the `:::` character&mdash;this is Pandoc’s fenced div syntax, which lets you do a lot of tricks in various formats. Here, it is just used to delineate the speaker notes.
 
-pandoc myslides.md -o myslides.pptx --reference-doc another.pptx
+![](../img/slides-pandoc-powerpoint.png)
 
-When you run the command with the --reference-doc parameter, Pandoc takes the theme from the specified existing Powerpoint file and applies it to the new one you are creating.
+Not all Markdown formatting is appropriate for slides, but tables work nicely&mdash;and Pandoc provides special formatting that lets you do a few interesting things.
 
-That means if you have a theme you like, you can create a whole presentation in that theme — no one will know you started with Markdown. This feature doesn’t always work with heavily modified presentations or corporate templates, but I was able to get it to work with built-in templates and one template that I had customized.
+### Special Pandoc formatting
 
-That fenced div notation lets you create columns using nested divs without writing <div> tags in HTML. Take a look at this example:
+Pandoc includes a number of formatting tricks that you might find useful. One of the most useful is fenced div syntax, which uses groups of colon characters as shorthand. 
+
+One of the most interesting uses of this syntax is to create columns using nested divs without writing <div> tags in HTML. Take a look at this example:
 
 ```
-
 :::::::::::::: {.columns}
 ::: {.column width="50%"}
 
@@ -98,18 +88,44 @@ Left column:
 
 ```
 
-That translates to a <div class="columns"> containing two <div class="column"> tags that Pandoc can understand. It uses these to create a slide with columns. Notice that the opening and closing of the outer div has a whole bunch of : characters instead of just three. This is for readability; you can use as few as three if you like.
+That translates to a `<div class="columns">` tag containing two `<div class="column">` tags that Pandoc can understand. It uses these to create two columns. Each div can be signified with as few as three colons in a row; the outher div uses more colons here for readability.
 
+The curly braces let you define *attributes* such as identifiers, classes, and key/value pairs on headers, images, and a few other elements in Pandoc. In the above example, the attributes specify the names and widths of the divs.
 
-![](../img/slides-pandoc-powerpoint-columns.png)
+### Images
 
-The curly braces let you define attributes such as identifiers, classes, and key/value pairs on headers, images, and a few other elements in Pandoc. If you’re using Pandoc to create Word or other long text documents, this is handy because you can set anchors on headings and link to them internally.
+When your Markdown includes images, use relative paths. For example:
 
-Above, we are just using the attributes to add the column and columns classes to the fenced divs to create columns. But there is another cool attributes trick from Pandoc that we can use — scaling an image:
+```
+![An image](../images/whatever.png)
+```
+
+In the above example, the `images` directory is at the same level as the file containing the Markdown file; the relative path goes up a directory from the Markdown file and then down into the `images` directory to find the image.
+
+When Pandoc follows these relative links, it starts from the directory where you typed the `pandoc` command. If you want Pandoc to find your images, either run the command from a directory where the relative links to the images make sense, or copy the images to a place where the relative links can find them.
+
+You can use an attribute to scale an image:
 
 ```
 ![Alt text](bench.jpg){width=25%}
 ```
 
+When Pandoc renders the image, it is scaled to a percentage of the container where it resides (a column, for example). The alt text is used for a caption.
 
-When Pandoc renders the image, it is scaled to a percentage of the container where it resides (a slide or column, for example). The alt text is used for a caption.
+## Creating the presentation
+
+The command for creating the document is simple. With a single Markdown file, it looks like this:
+
+```
+pandoc -o my_slides.pptx my_slides.md
+```
+
+### Using a reference document
+
+You can apply the theme and styles from another PowerPoint document called a *reference document.* For example:
+
+```
+pandoc --reference-doc another.pptx -o my_slides.pptx my_slides.md
+``` 
+
+This gives your converted PowerPoint document the same look and feel as the other presentation.

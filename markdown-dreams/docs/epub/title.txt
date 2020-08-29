@@ -1,0 +1,6 @@
+---
+title: How to do things with Markdown and Git
+author: Peter S. Conrad
+rights:  Creative Commons Non-Commercial Share Alike 3.0
+language: en-US
+...

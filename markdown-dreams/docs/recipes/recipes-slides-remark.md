@@ -1,5 +1,19 @@
 # Create a Remark presentation
 
+Remark is a standalone slide presentation that you edit directly. You create slides in your favorite Markdown editor, then paste them into a specific place in the HTML file. 
+
+There are three ways to use Remark:
+
+- [`boilerplate-single.html`](https://github.com/gnab/remark/blob/develop/boilerplate-single.html) &ndash; a standalone presentation containing the entire JavaScript 
+- [`boilerplate-local.html`](https://github.com/gnab/remark/blob/develop/boilerplate-local.html) &ndash; a standalone presentation that references the JavaScript from another local file
+- [`boilerplate-remote.html`](https://github.com/gnab/remark/blob/develop/boilerplate-remote.html) &ndash; a presentation that references the JavaScript from online
+
+The first option is a long file that might be confusing to edit, but contains everything you need, making it the most "standalone" of the three choices. The other two are easier to edit because the JavaScript is in a separate file. Because `boilerplate-remote.html` calls the JavaScript online, a network connection is required.
+
+!!! hint
+     If you're not sure which version to choose, start with `boilerplate-remote.html`
+     because it is easy to edit and doesn't require you to download the JavaScript file
+     separately.
 
 
 ## Ingredients
@@ -11,18 +25,17 @@
   <tr>
     <td><b><a href="../../tools/tools-publishing/#remark">Remark.js</a></b></td>
   </tr>
+  </tr>
+    <tr>
+    <td>A browser</td>
+  </tr>
 </table>
 
+## Markdown for Remark
 
+Remark uses level one or level two headings for slide titles and separates slides with the horizontal rule (`---`). Speaker notes are at the end of each slide, marked by three question marks (`???`).
 
-
-## Remark
-
-If you don’t want to use Pandoc, consider Remark: a standalone slide presentation that you edit directly. Because it uses Markdown nestled inside an HTML document, your favorite Markdown editor might get confused. Mine did. This makes it a little less convenient to edit.
-
-On the other hand, you don’t need Pandoc — so you don’t need a computer — so if you are stuck in an airport with nothing but your phone, Remark might just be your smartest choice.
-
-The Markdown is a little different, but shouldn’t look unfamiliar by now:
+Here is some example Markdown:
 
 ```
 class: center, middle
@@ -48,13 +61,52 @@ Speaker notes go here
 
 ```
 
-Remark provides some rudimentary CSS to style slides. The first slide uses an H1 header as a section header. The simplified CSS code class: center, middle puts it in the middle of the slide. I added smaller text for the author and date, using .right to right-align it. You can use.right, .left, and .center to align text in different positions on the slide. This does not mean you can easily create columns in Remark. You can do it, but it requires authoring more complicated CSS.
+Remark provides some rudimentary CSS to style slides. The above example uses `class: center, middle` to put the slide title in the middle of the slide, and `.right` to align the text showing the author and date. 
 
-You can use H1 or H2 for slide titles — I prefer H1. Speaker notes are set off with ??? and the usual --- separator denotes slide boundaries.
+You can use normal Markdown image syntax, but you can also use CSS and HTML to change the way images appear:
+
+```
+.center[<img src="bench.jpg" width=50% height=50%></img>]
+```
 
 ![](../img/slides-remark.png)
 
-You don’t have to build a Remark presentation; it just is. You can open it in a text editor and a browser. Any changes you save from the text editor show up in the browser when you reload. Like other browser-based slide tools, remember that you need to keep your images where the HTML expects to find them.
+More complicated CSS is available if you want to experiment further, but is beyond the scope of this recipe.
 
-There is one important choice to make with Remark: you can work with a standalone presentation containing the entire JavaScript that makes it work; a standalone presentation that references the JavaScript from another local file; or a presentation that references the JavaScript from online. The first option is longest but most “standalone,” and the last is the shortest (and therefore easiest to edit) but requires connectivity.
+## Creating the presentation
+
+Remark needs three things to work: boilerplate HTML, the `remark.js` script, and your Markdown.
+
+1. Open [`boilerplate-remote.html`](https://github.com/gnab/remark/blob/develop/boilerplate-remote.html) in a text editor.
+1. Add your Markdown in the source text area. Example:
+   ```
+    <textarea id="source">
+
+    class: center, middle
+
+    # Title
+
+    ---
+
+    # Agenda
+
+    1. Introduction
+    2. Deep-dive
+    3. ...
+
+    ---
+
+    # Introduction
+
+    </textarea>
+   ```
+1. Save the file with a new name (`my-slides.html`, for example) and open it in a browser.
+
+Any changes you save from the text editor show up in the browser when you reload. Like other browser-based slide tools, remember that you need to keep your images where the HTML expects to find them.
+
+!!! hint
+    It's a good idea to create the Markdown in a folder together with the 
+    boilerplate HTML, any images, and `remark.js` (if needed). That way, you can copy
+    the entire folder wherever you need it, knowing that the presentation will work.
+
 

@@ -90,4 +90,11 @@ See also:
 - [Create a Remark presentation](../../recipes/recipes-slides-remark/)
 
 
+## Other tools
 
+If you are converting Markdown to a format such as Word, PDF, or ePub, it can be useful to have editing tools to help you fix any problems in the final result:
+
+- [Acrobat](https://get.adobe.com/reader/) - the original PDF reader
+- [LibreOffice](https://www.libreoffice.org/) - an open-source office suite
+- [Microsoft Office](https://www.office.com/) - an office suite that includes Word and PowerPoint
+- [Sigil](https://sigil-ebook.com/) - a multi-platform ePub editor

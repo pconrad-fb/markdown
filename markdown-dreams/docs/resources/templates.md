@@ -337,5 +337,65 @@ class: center, middle
 
 # Introduction
 
+---
+
+# Text alignment
+
+.left[Left-aligned text]
+
+.center[Centered text]
+
+.right[Right-aligned text]
+
+???
+Speaker notes go here
+
+---
+
+# Images
+
+You can use CSS and HTML to do images:
+
+.center[<img src="bench.jpg" width=50% height=50%></img>]
+
+---
+
+background-image: url(bench.jpg)
+background-size: contain
+
+# Slide with background image
+
+---
+
+# Incremental slide
+
+- You build bullet lists like this
+
+--
+
+- with two-dash separators
+
+???
+Speaker notes go here
+
+--
+
+{{content}}
+- Incrementally
+
+???
+Speaker notes go here
+
+--
+
+- And with the \{\{content}} directive you can say where the next piece of content should go.
+
+---
+
+class: center, middle
+
+# Thank you
+
+
     </textarea>
 ```
