@@ -1,9 +1,14 @@
 # Publish a website with Hugo
 
-Different choices:
+[Hugo](https://gohugo.io/) is a very powerful open-source static site generator that includes tools for organizing content, adding extensions, and even creating dynamic logic. There is way too much to document here, so the focus of this recipe will be getting started and a few basics.
 
-- Pandoc
-- Others from my preso
+To install Hugo, use your operating system's package manager:
+
+- Linux: [apt-get](https://help.ubuntu.com/community/AptGet/Howto) or [yum](http://yum.baseurl.org/)
+- macOS: [Homebrew](https://brew.sh/)
+- Windows: [Chocolatey](https://chocolatey.org/)
+
+You can also download and install the binary, or build it yourself from source.
 
 ## Ingredients
 
@@ -30,7 +35,9 @@ This recipe goes well with:
 - [Centralized Git workflow](../recipes-centralized-workflow/)
 - [GitHub flow](../recipes-gitflow/)
 
-Make sure yoiu have the ingredients for those as well
+Make sure you have the ingredients for those as well.
+
+
 
 - Installing and creating the directory are easy:
   `sudo apt-get install hugo`
@@ -48,8 +55,11 @@ It's not set up for docs so you don't necessarily get left nav (some themes do, 
 
 ## Setting up your site
 
+Once Hugo is installed, you can create a new site by typing `hugo new site my-project`, which provides some instructions when it runs:
+
+
 ```
-$ hugo new site markdown-hugo
+$ hugo new site my-project
 Congratulations! Your new Hugo site is created in /home/pconrad/git/markdown/markdown-hugo.
 
 Just a few more steps and you're ready to go:
@@ -65,12 +75,14 @@ Visit https://gohugo.io/ for quickstart guide and full documentation.
 
 ```
 
-- Configuration and preferences
+## Adding a theme
+
+To add a theme, you use the `git submodule add` command from within your site directory. Each theme in Hugo's official [Complete List](https://themes.gohugo.io/) includes instructions for adding the submodule from the correct Git repository. Here is how it looks:
 
 
 ```
 $ git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke
-Cloning into '/home/pconrad/git/markdown/markdown-hugo/themes/ananke'...
+Cloning into '/home/pconrad/git/my-project/themes/ananke'...
 remote: Enumerating objects: 8, done.
 remote: Counting objects: 100% (8/8), done.
 remote: Compressing objects: 100% (8/8), done.
@@ -79,25 +91,18 @@ Receiving objects: 100% (1839/1839), 4.33 MiB | 1.26 MiB/s, done.
 Resolving deltas: 100% (1022/1022), done.
 ```
 
-Change the config file
+After you've installed the theme, add it to the configuration file `config.toml` like so:
 
 ```
-pconrad@tinybox:~/git/markdown/markdown-hugo$ cat config.toml 
-baseURL = "http://example.org/"
-languageCode = "en-us"
-title = "My New Hugo Site"
-pconrad@tinybox:~/git/markdown/markdown-hugo$ echo 'theme = "ananke"' >> config.toml
-pconrad@tinybox:~/git/markdown/markdown-hugo$ cat config.toml 
-baseURL = "http://example.org/"
-languageCode = "en-us"
-title = "My New Hugo Site"
-theme = "ananke"
+$ echo 'theme = "ananke"' >> config.toml
 
 ```
+
+You can edit the `config.toml` file to change other things about the site, such as the site title or the base URL.
 
 ## Working with content
 
-You get a 404 unless you have both YAML and some content. Otherwise it's Git Wiki Structure
+You can create a new page with `hugo new <path>`. For example, typing `hugo new posts/my-first-post.md` creates a file in the `content` directory that will display at the URL /posts/my-first-post. When it's created, all this page contains is YAML frontmatter:
 
 ```
 ---
@@ -105,56 +110,64 @@ title: "My First Post"
 date: 2020-08-28T18:42:02-07:00
 draft: true
 ---
-
-# Title
 ```
 
+Once you add some Markdown content, you can preview the page. A page in Hugo must contain both frontmatter and Markdown content. If either is missing, the page will show `404 page not found` when you try to preview it.
 
-- Extra markdown stuff like short codes or extensions
+You can use YAML, TOML, or JSON frontmatter in your files. Frontmatter can signal content status inclusing publish and expiry dates, and can contain variables that you can use in templates and in content by creating your own Hugo shortcodes. This is too complex to show here, but the Hugo website has a lot of documentation.
+
+If you are migrating content into Hugo from a Git wiki, MkDocs site, or some other source, you will need to add frontmatter to any pages that don't already have it.
 
 ## Local preview
 
-Now, start the Hugo server with drafts enabled:
+To preview your content, start the Hugo server: 
 
 ```
 $ hugo server -D
-
-                   | EN  
--------------------+-----
-  Pages            | 41  
-  Paginator pages  |  0  
-  Non-page files   | 79  
-  Static files     |  6  
-  Processed images |  0  
-  Aliases          |  0  
-  Sitemaps         |  1  
-  Cleaned          |  0  
-
-Built in 158 ms
-Watching for changes in /home/pconrad/git/markdown/markdown-hugo/{archetypes,content,data,layouts,static,themes}
-Watching for config changes in /home/pconrad/git/markdown/markdown-hugo/config.toml
-Environment: "development"
-Serving pages from memory
-Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
-Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
-Press Ctrl+C to stop
-
-Change detected, rebuilding site.
-2020-08-28 18:45:46.771 -0700
-Source changed "/home/pconrad/git/markdown/markdown-hugo/content/posts/my-first-post.md": WRITE
-Total in 75 ms
-
-
 ```
+The `-D` option includes pages in draft status. If you omit this option, any page with `draft:true` in the frontmatter is ignored.
+
+![](../img/hugo-preview.png)
+
+Hugo is a bit finicky about previewing and building content, and there are a few reasons why pages might not show up in the preview. Make sure each file contains both frontmatter and Markdown, that it doesn't have a publish date in the future or expiry date in the past, and so on.
 
 ### Images
 
-relative to the MD file: ../img/whatever.png
-relative to the URL: ../../img/whatever.png
+Images in Hugo normally go in the `static` directory. Here, I've added a subdirectory called `images` and when I add the image in my Markdown editor it looks like this:
 
-MkDocs has the same thing but handles it for you.
+    ![](../../static/images/whatever.png)
 
-## Publishing
+That makes sense, since that is the correct relative path to the file. When the site is built for local preview, however, the result is this:
 
-- generating the site
-- FTP it somewhere?
+    <img src="../../static/images/whatever.png" alt="">
+
+Unfortunately, that won't work. The actual relative path to the image is: `../../images/whatever.png` instead.
+
+In other words, when you add an image whose relative path is correct with regard to the Markdown file, you must remove `static/` from the path to make it work in the preview and the built site. If you are using an editor that lets you preview the images as you work, then you have to break all the images to get them to work in Hugo.
+
+You can try another solution: instead of putting images in `static`, create an `images` directory inside the `content` directory. If you do that, you end up with a different problem. 
+
+Relative to the Markdown file, the image is now at: `../img/whatever.png`
+
+However, relative to the URL, the image needs to be at: ../../img/whatever.png
+
+In other words, if you put an `images` directory inside `content` then you must add one more layer of `../` because the page itself is treated as a directory in the browser.
+
+To sum up: images can be a little tricky in Hugo. 
+
+## Building and publishing
+
+The `hugo` command builds the website in a directory called `public`. To publish the site, use FTP to transfer the contents of that directory to a folder on a webserver.
+
+!!! hint
+    To prevent Git from tracking changes to the `public` directory, create a file called
+    `.gitignore` at the top level directory of the Hugo project with the following
+    contents:
+    
+    ```
+    public/
+    ```
+
+    If you use `git add` to add your `.gitignore` file to change tracking, then
+    it will apply to anyone who clones the repo&mdash;meaning that no one will 
+    add built HTML pages to Git.

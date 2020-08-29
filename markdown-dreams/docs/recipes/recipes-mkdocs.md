@@ -143,7 +143,7 @@ The `mkdocs build` command builds the website in a directory called `site`. To p
 
 !!! hint
     To prevent Git from tracking changes to the `site` directory, create a file called
-    `.gitignore` at the top level directory of the local repository with the following
+    `.gitignore` at the top level directory of the MkDocs project with the following
     contents:
     
     ```

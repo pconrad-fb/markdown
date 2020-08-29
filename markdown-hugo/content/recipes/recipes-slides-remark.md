@@ -1,15 +1,38 @@
 ---
 title: Create a Remark presentation
-date:
-draft: false
+date: 2020-08-28T18:42:02-07:00
+draft: true
+myvariable: whatever
+
 ---
 
-# Create a Remark presentation
 
-
+![](../../iaj/bitbucket-pull-request-buttons.png)
+![](../img/avatar.png)
+![](../../static/images/slides-remark.png)
+![](../../static/images/slides-remark.png)
+![](../../immij/slides-remark.png)
 
 ## Ingredients
+{{ .Get "draft" }}
+{{ $Param.myvariable . }}
 
+1: {{my_variable}}
+
+{{ .Date }}
+
+{{< highlight html >}}
+<section id="main">
+  <div>
+   <h1 id="title">{{ .Title }}</h1>
+    {{ range .Pages }}
+        {{ .Render "summary"}}
+    {{ end }}
+  </div>
+</section>
+{{ .Params.date }}
+{{< /highlight >}} 
+ 
 <table>
   <tr>
     <td><b><a href="../../tools/tools-editors/">Markdown editor</a></b></td>
@@ -58,7 +81,7 @@ Remark provides some rudimentary CSS to style slides. The first slide uses an H1
 
 You can use H1 or H2 for slide titles — I prefer H1. Speaker notes are set off with ??? and the usual --- separator denotes slide boundaries.
 
-![](../../img/slides-remark.png)
+![](../../immij/slides-remark.png)
 
 You don’t have to build a Remark presentation; it just is. You can open it in a text editor and a browser. Any changes you save from the text editor show up in the browser when you reload. Like other browser-based slide tools, remember that you need to keep your images where the HTML expects to find them.
 
