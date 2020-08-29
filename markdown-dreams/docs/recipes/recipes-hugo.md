@@ -37,22 +37,6 @@ This recipe goes well with:
 
 Make sure you have the ingredients for those as well.
 
-
-
-- Installing and creating the directory are easy:
-  `sudo apt-get install hugo`
-  But this got me 0.40 which wasn't compatible with the templates; I had to manually install 0.59 using `dpkg -i` from a downloaded archive
-- `hugo new-site markdown` creates a directory called `markdown` with the basics in it
-- Pick a theme, git-clone it into its own named dir in the `themes` dir
-- Add `theme = <theme>` to `config.toml`
-- Start it with `hugo server -D` (drafts enabled)
-- Works, publishes, able to publish to just the markdown directory by setting base URL
-- Image path `static/images` ... Markdown editor and Hugo see this path differently; Hugo ignores `static` so you can't see images in both the Markdown editor and Hugo.
-- Then you have to FTP things up manually
-
-
-It's not set up for docs so you don't necessarily get left nav (some themes do, some don't)
-
 ## Setting up your site
 
 Once Hugo is installed, you can create a new site by typing `hugo new site my-project`, which provides some instructions when it runs:
@@ -149,7 +133,7 @@ You can try another solution: instead of putting images in `static`, create an `
 
 Relative to the Markdown file, the image is now at: `../img/whatever.png`
 
-However, relative to the URL, the image needs to be at: ../../img/whatever.png
+However, relative to the URL, the image needs to be at: `../../img/whatever.png`
 
 In other words, if you put an `images` directory inside `content` then you must add one more layer of `../` because the page itself is treated as a directory in the browser.
 
