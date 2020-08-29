@@ -125,18 +125,17 @@ For the most part, working with content is what you would expect. It's just Mark
   makes it likely that you can't use your Markdown source files with other toolchains
   (unless you take the fun stuff out).
 
-  Also, you have to rrestart the server when you add or change a snippet, and also if you start using stnippets, you're fgettting away from a situation where you can publish in other formats.
-
 ### Snippets
 
 If you use snippets, the location of the files you include is relative to the top-level directory of your project (`my-project` for example). It's a good idea to create a directory for snippets and then define it in the `base_path` variable in your `mkdocs.yml` file. 
 
 I created a directory called `snippets` and specified it as shown above. That way, I can include snippets using only the filename and I don't have to think about a relative path from the page where I am using the snipppet:
 
-```
---8<-- "github-flow-snippet.html"
-```
+<pre>&#45;-8<-- "github-flow-snippet.html"</pre>
 
+!!! hint
+    Adding or changing a snippet sometimes requires restarting the webserver before
+    the changes show up in the live preview.
 
 ## Building and publishing
 
@@ -150,3 +149,7 @@ The `mkdocs build` command builds the website in a directory called `site`. To p
     ```
     site/
     ```
+
+    If you use `git add` to add your `.gitignore` file to change tracking, then
+    it will apply to anyone who clones the repo&mdash;meaning that no one will 
+    add built HTML pages to Git.
