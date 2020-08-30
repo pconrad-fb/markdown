@@ -1,6 +1,6 @@
 # Publishing tools
 
-There are many tools that can take your Markdown to your audience or just convert them for use in other doc tools. We'll focus the Git wiki, the static site generators Hugo and MkDocs, and Pandoc. We'll also touch on tools for creating standalone presentations.
+There are many tools for publishing Markdown or converting it for use in other doc tools. We'll focus on the Git wiki, the static site generators Hugo and MkDocs, and Pandoc. We'll also touch on tools for creating presentations.
 
 ![](../img/publishing.png)
 
@@ -45,16 +45,16 @@ See also:
 
 ## Pandoc
 
-[Pandoc](https://pandoc.org/) is a tool that can convert between Markdown and a number of formats. You can use Pandoc to create Word and Powerpoint documents, PDFs, HTML, and standalone slide presentations that work with tools like DZslides. For longer documents, Pandoc has options for concatenating Markdown files together.
+[Pandoc](https://pandoc.org/) is a tool that can convert between Markdown and a number of formats. You can use Pandoc to create Word and Powerpoint documents, PDFs, HTML, and several kinds of presentations. For longer documents, can concatenate Markdown files together.
 
-Pandoc includes formatting tricks that let you do things like create columns or scale images, and can use stylesheets from existing documents to give your content a specific look and feel.
+Pandoc includes formatting tricks that let you do things like create columns or scale images, and you can use stylesheets from existing documents to give your content a specific look and feel.
 
-You can also convert from various formats to Markdown, including dong things like grabbing a web page as a Markdown file. You can even [try it online](https://pandoc.org/try/).
+You can also convert from various formats to Markdown, including doing things like grabbing a web page as a Markdown file. You can even [try it online](https://pandoc.org/try/).
 
 See also:
 
 - [Create a Word document](../../recipes/recipes-pandoc-word/)
-- [Create an eBook](../../recipes/recipes-pandoc-ebook/)
+- [Create an ePub](../../recipes/recipes-pandoc-ebook/)
 - [Create a PDF](../../recipes/recipes-pandoc-pdf/)
 - [Grab a web page](../../recipes/recipes-pandoc-web/)
 - [Create a Powerpoint presentation](../../recipes/recipes-slides/)
@@ -62,12 +62,12 @@ See also:
 
 ## FTP
 
-When you create a website with Hugo or MkDocs, you'll use FTP to upload the files to the web. You can do this from the command line, but it's much easier to choose an application that gives a nice UI and lets you save bookmarks. Here are a few:
+When you create a website with Hugo or MkDocs, you'll use file transfer protocol (FTP) to upload the files to the web. You can do this from the command line, but it's much easier to choose an application that gives a nice UI and lets you save bookmarks. Here are a few:
 
 - [FileZilla](https://filezilla-project.org/) - a free, open source FTP tool for macOS
   and Windows
 - [gFTP](https://en.wikipedia.org/wiki/GFTP) - the default Linux option
-- [Transmit](https://panic.com/transmit/) - a commercial app for macOS
+- [Transmit](https://panic.com/transmit/) - a commercial file transfer app for macOS
 
 ## Presentation tools
 

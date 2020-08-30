@@ -26,9 +26,9 @@ pandoc -o my_document.docx my_markdown.md
 
 ### Special Pandoc formatting
 
-Pandoc includes a number of formatting tricks that you might find useful. One of the most useful is fenced `div` syntax, which uses groups of colon characters as shorthand. 
+Pandoc includes a number of formatting tricks that you might find useful. One of the most useful is fenced div syntax, which uses groups of colon characters. 
 
-One of the most interesting uses of this syntax is to create columns using nested divs without writing <div> tags in HTML. Take a look at this example:
+You can use fenced div syntax to create columns using nested divs without writing `<div>` tags in HTML. Take a look at this example:
 
 ```
 :::::::::::::: {.columns}
@@ -50,9 +50,9 @@ Left column:
 
 ```
 
-That translates to a <div class="columns"> containing two <div class="column"> tags that Pandoc can understand. It uses these to create two columns. Each `div` can be signified with as few as three colons in a row; the outher `div` uses more colons here for readability.
+That translates to a `<div class="columns">` containing two `<div class="column">` tags that Pandoc can understand. It uses these to create two columns in the Word doc. Each `div` can be signified with as few as three colons in a row; the outher `div` uses more colons here for readability.
 
-The curly braces let you define attributes such as identifiers, classes, and key/value pairs on headers, images, and a few other elements in Pandoc. If you’re using Pandoc to create long Word documents, this is handy because you can set anchors on headings and link to them internally.
+You can use curly braces to define attributes such as identifiers, classes, and key/value pairs on headers, images, and a few other elements in Pandoc. If you’re using Pandoc to create long Word documents, this is handy because you can set anchors on headings and link to them internally.
 
 You can also use an attribute to scale an image:
 
@@ -102,8 +102,6 @@ In the above example, the `images` directory is at the same level as the file co
 
 When Pandoc follows these relative links, it starts from the directory where you typed the `pandoc` command. If you want Pandoc to find your images, either run the command from a directory where the relative links to the images make sense, or copy the images to a place where the relative links can find them.
 
-Needless to say, if the relative links follow different paths from different Markdown files, that makes more work for you.
-
 ### Using a reference document
 
 When you use Pandoc to convert Markdown to Word, you can apply the theme and styles from another Word document called a *reference document.* For example:
@@ -115,7 +113,7 @@ pandoc --reference-doc another.docx -o my_document.docx title.txt chapter_1.md c
 
 ### Cleaning up
 
-If you are converting content from another project&mdash;an MkDocs site, for example&mdash;you're likely to have included formatting such as Python extensions that Pandoc doesn't handle. You'll need to edit the ePub and clean up these items. For example:
+If you are converting content from another project&mdash;an MkDocs site, for example&mdash;the Markdown files might include formatting such as Python extensions that Pandoc doesn't handle. You'll need to edit the Word document and clean up items like these:
 
 - Admonitions
 - Content tabs

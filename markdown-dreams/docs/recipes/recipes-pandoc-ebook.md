@@ -65,11 +65,9 @@ In the above example, the `images` directory is at the same level as the file co
 
 When Pandoc follows these relative links, it starts from the directory where you typed the `pandoc` command. If you want Pandoc to find your images, either run the command from a directory where the relative links to the images make sense, or copy the images to a place where the relative links can find them.
 
-Needless to say, if the relative links follow different paths from different Markdown files, that makes more work for you.
-
 ### Cleaning up
 
-If you are converting content from another project&mdash;an MkDocs site, for example&mdash;you're likely to have included formatting such as Python extensions that Pandoc doesn't handle. You'll need to edit the ePub and clean up these items. For example:
+If you are converting content from another project&mdash;an MkDocs site, for example&mdash;the Markdown files might include formatting such as Python extensions that Pandoc doesn't handle. You'll need to edit the ePub and clean items like these:
 
 - Admonitions
 - Content tabs
@@ -82,10 +80,19 @@ If you use HTML in your Markdown, especially HTML examples (for example, in a bo
 When your book contains many files, the command can get unwieldy:
 
 ```
-pandoc -o markdown-dreams.epub title.txt ../index.md ../getting-started/getting-started.md ../tools/tools-editors.md ../tools/tools-storage.md ../tools/tools-git.md ../tools/tools-git-setup.md ../tools/tools-git-basics.md ../tools/tools-publishing.md ../recipes/recipes-notes.md ../recipes/recipes-git-wiki.md ../recipes/recipes-centralized-workflow.md ../recipes/recipes-gitflow.md ../recipes/recipes-hugo.md ../recipes/recipes-mkdocs.md ../recipes/recipes-pandoc-word.md ../recipes/recipes-pandoc-ebook.md ../recipes/recipes-pandoc-pdf.md ../recipes/recipes-pandoc-web.md ../recipes/recipes-slides.md ../recipes/recipes-slides-dzslides.md ../recipes/recipes-slides-remark.md ../resources/markdown-cheatsheet.md ../resources/resources-glossary.md ../resources/templates.md ../resources/links.md
+pandoc -o markdown-dreams.epub title.txt ../index.md ../getting-started/getting-started.md
+ ../tools/tools-editors.md ../tools/tools-storage.md ../tools/tools-git.md ../tools/tools-
+ git-setup.md ../tools/tools-git-basics.md ../tools/tools-publishing.md ../recipes/recipes
+ -notes.md ../recipes/recipes-git-wiki.md ../recipes/recipes-centralized-workflow.md ../
+ recipes/recipes-gitflow.md ../recipes/recipes-hugo.md ../recipes/recipes-mkdocs.md ../
+ recipes/recipes-pandoc-word.md ../recipes/recipes-pandoc-ebook.md ../recipes/recipes-
+ pandoc-pdf.md ../recipes/recipes-pandoc-web.md ../recipes/recipes-slides.md ../recipes/
+ recipes-slides-dzslides.md ../recipes/recipes-slides-remark.md ../resources/markdown-
+ cheatsheet.md ../resources/resources-glossary.md ../resources/templates.md ../resources/
+ links.md
 ```
 
-If you're adding, removing, or reordering chapters, you will find it easier to create a script. You can run the script by typing a single command, and you can edit the script easily to make changes. You can create a script on macOS or Linux, or using the new Bash shell in Windows 10.
+With a lot of chapters, you will find it easier to use a script. You can run the script by typing a single command, and you can edit the script easily to make changes. You can create a script on macOS or Linux, or using the new Bash shell in Windows 10.
 
 Here is an example:
 

@@ -1,6 +1,6 @@
 # Overview
 
-You can use Pandoc to create a PDF, which makes it easy for anyone to read and discourages editing.
+You can use Pandoc to create a PDF, which is a pleasant way to share content that you don't want other people to edit along the way.
 
 ## Ingredients
 
@@ -65,8 +65,6 @@ In the above example, the `images` directory is at the same level as the file co
 
 When Pandoc follows these relative links, it starts from the directory where you typed the `pandoc` command. If you want Pandoc to find your images, either run the command from a directory where the relative links to the images make sense, or copy the images to a place where the relative links can find them.
 
-Needless to say, if the relative links follow different paths from different Markdown files, that makes more work for you.
-
 ### Errors
 
 Pandoc can use a number of different PDF engines with different capabilities. In some cases, special characters or other formatting can cause the PDF creation to fail. You can try specifying a different PDF engine, remove the characters or formatting causing the problem, or create a Word document and export the PDF from there.
@@ -86,7 +84,7 @@ Try running pandoc with --pdf-engine=xelatex.
 
 ### Cleaning up
 
-If you are converting content from another project&mdash;an MkDocs site, for example&mdash;you're likely to have included formatting such as Python extensions that Pandoc doesn't handle. You'll need to edit the ePub and clean up these items. For example:
+If you are converting content from another project&mdash;an MkDocs site, for example&mdash;the Markdown files might contain formatting such as Python extensions that Pandoc doesn't handle. You'll need to edit the PDF and clean up items like these:
 
 - Admonitions
 - Content tabs

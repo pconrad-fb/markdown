@@ -10,7 +10,7 @@ With Git, you synchronize files on your computer with files on a remote reposito
 
 ## Why Git?
 
-Back in the day, there were all kinds of source control systems. The ones I remember were all pretty easy to use, but were all centralized&mdash;meaning that only one person could edit any given file at any given time. Worse, it meant that there wass one central source of truth; if that were corrupted or lost, everything would be gone. Git solves these problems and [doesn't have to be hard to use](https://levelup.gitconnected.com/git-doesnt-have-to-be-hard-e1e115be6668).
+Back in the day, there were all kinds of source control systems. The ones I remember were all pretty easy to use, but were all centralized&mdash;meaning that only one person could edit any given file at any given time. Worse, it meant that there was one central source of truth; if that were to be corrupted or lost, everything would be gone. Git solves these problems and [doesn't have to be hard to use](https://levelup.gitconnected.com/git-doesnt-have-to-be-hard-e1e115be6668).
 
 ## Get Git
 
@@ -52,13 +52,13 @@ In fact, we don't care about *files* at all in Git. We only care about *changes.
 Let's say you have a directory of files you're working on. yes, Git doesn't care about files, but you do!
 
 **Commit**  
-You open a file in an editor, make some changes, and save the file. Git will notice the *changes* you made to the file. If you meant to make those changes, you must *commit* them. This is like "saving changes to Git." A commit is a group of changes.
+You open a file in an editor, make some changes, and save the file. Git will notice the *changes* you made to the file. If you meant to make those changes, you must *commit* them. This is like "saving changes to Git." A commit is a group of changes. When you commit, you type a little note describing the changes so that people know what was done. 
 
 **Stage**  
-Sometimes, before you commit changes, you tell Git explicitly which changes to track. This is called *staging.* Since changes go with files, sometimes people think of it as staging the files themselves&mdash;but it's really the changes that Git wants to know about.
+Before you commit changes, you tell Git explicitly which changes to track. This is called *staging.* Since changes go with files, sometimes people think of it as staging the files themselves&mdash;but it's really the changes that Git wants to know about. If you delete a file, that's a change too.
 
 **Repository**  
-When you commit, you type a little note describing the changes so that people know what was done. When you have committed, your changes are stored in the *repository,* or *repo* for short. It's just like that old central repository, but it's just on your computer.
+When you have committed, your changes are stored in the *repository,* or *repo* for short. It's just like that old central repository, but it's on your computer.
 
 **Push**  
 If you want other people to be able to work on your files, then you need to put them in an online repository (such as Bitbucket, GitHub, or GitLab). This is not *checking in* since the changes are already committed to your local repository. This is called a *push* to a *remote repository*.

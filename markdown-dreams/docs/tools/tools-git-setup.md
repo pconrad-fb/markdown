@@ -4,7 +4,13 @@ If you want to be ready for all the recipes in this guide, follow these steps to
 
 ## Install Git
 
-If you don't already have Git set up on your computer, follow these steps.
+On the command line, check whether Git is installed on your computer by typing:
+
+```
+git --version
+```
+
+If Git is not installed, follow these steps.
 
 1. Install Git on your computer:
     - [Windows](https://git-scm.com/download/win)

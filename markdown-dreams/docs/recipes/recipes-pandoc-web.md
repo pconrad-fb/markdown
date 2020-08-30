@@ -18,7 +18,13 @@ Converting a web page to Markdown on the fly is a small task that can be very he
 The command is very simple:
 
 ```
-pandoc -s -r html http://127.0.0.1:8000/ -o how-to-do-things.md
+pancod -s -r html <URL> -o <Markdown filename>
+```
+
+Example:
+
+```
+pandoc -s -r html http://www.peterconrad.com/markdown-dreams/ -o how-to-do-things.md
 ```
 
 

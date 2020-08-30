@@ -54,8 +54,6 @@ The above Markdown contains two slides:
 - A section title slide 
 - A slide with a level two heading for the title
 
-You could add another slide by appending a level one or level heading at the end.
-
 Notice the `:::` character&mdash;this is Pandoc’s fenced div syntax, which lets you do a lot of tricks in various formats. Here, it is just used to delineate the speaker notes.
 
 ![](../img/slides-pandoc-powerpoint.png)
@@ -66,7 +64,7 @@ Not all Markdown formatting is appropriate for slides, but tables work nicely&md
 
 Pandoc includes a number of formatting tricks that you might find useful. One of the most useful is fenced div syntax, which uses groups of colon characters as shorthand. 
 
-One of the most interesting uses of this syntax is to create columns using nested divs without writing <div> tags in HTML. Take a look at this example:
+One of the most interesting uses of this syntax is to create columns using nested divs without writing `<div>` tags in HTML. Take a look at this example:
 
 ```
 :::::::::::::: {.columns}
@@ -88,7 +86,7 @@ Left column:
 
 ```
 
-That translates to a `<div class="columns">` tag containing two `<div class="column">` tags that Pandoc can understand. It uses these to create two columns. Each div can be signified with as few as three colons in a row; the outher div uses more colons here for readability.
+That translates to a `<div class="columns">` tag containing two `<div class="column">` tags that Pandoc can understand. It uses these to create two columns in a PowerPoint slide. Each div can be signified with as few as three colons in a row; the outher div uses more colons here for readability.
 
 The curly braces let you define *attributes* such as identifiers, classes, and key/value pairs on headers, images, and a few other elements in Pandoc. In the above example, the attributes specify the names and widths of the divs.
 
@@ -129,3 +127,7 @@ pandoc --reference-doc another.pptx -o my_slides.pptx my_slides.md
 ``` 
 
 This gives your converted PowerPoint document the same look and feel as the other presentation.
+
+## Next steps
+
+- Check out the [PowerPoint template](../../resources/templates/#powerpoint)

@@ -1,6 +1,6 @@
 # Getting started
 
-You can start working with Markdown just by opening your favorite text editor and starting to type, but you probably want to do more than that. You might want to 
+You can start working with Markdown just by opening your favorite text editor and starting to type&mdash;but you probably want to do more than that. You might want to 
 share information on a website or wiki, take notes, or publish an eBook.
 
 ## Ingredients
@@ -14,7 +14,7 @@ These are the tools and resources you will use for the recipes in this guide. Ea
   </tr>
   <tr>
     <td><b><a href="../../tools/tools-pandoc/">Pandoc</a></b></td>
-    <td>Pandoc lets your Markdown editor import and export in several formats and also has a few tricks of its own. I recommend Pandoc for anyone who works with Markdown.</td>
+    <td>Pandoc enables your Markdown editor to import and export in several formats and also has a few tricks of its own. I recommend Pandoc for anyone who works with Markdown.</td>
   </tr>
   <tr>
     <td><b><a href="../../tools/tools-storage/">Shared storage</a></b></td>
@@ -49,7 +49,7 @@ You'll find it easiest to follow the recipes in this guide if you are comfortabl
 **Markdown Syntax**  
 Although some editors provide a WYSIWYG experience, knowing how to write [Markdown](https://www.markdownguide.org/basic-syntax/) directly will help you work more quickly and easily with a wider variety of tools. 
 
-- See the [Markdown cheatsheet](../resources/markdown-cheatsheet/)
+- See the [Markdown cheatsheet](../../resources/markdown-cheatsheet/)
 
 Markdown comes in a bunch of flavors with different capabilities:
 
@@ -71,7 +71,7 @@ Here are a few differences between these common flavors:
 |Definition Lists| | |&#10004;|&#10004;|
 |Abbreviations | | |&#10004;|&#10004; |
 
-Some tools include extensions that provide additional capabilities. [Hugo](../../tools/tools-publishing/#hugo), for example, has an extensible framework of shortcodes that let you do things like admonitions or create your own features. Many tools, including [MkDocs](../tools/tools-publishing/#mkdocs), use the [Python-Markdown Extensions](https://python-markdown.github.io/extensions/), which offer even more capabilities out of the box. There are also more complex systems that work with Markdown, such as [Markdown+Math](https://marketplace.visualstudio.com/items?itemName=goessner.mdmath), which displays LaTeX math, and [Mermaid](https://mermaid-js.github.io/mermaid/#/), which generates diagrams.
+Some tools include extensions that provide additional capabilities. [Hugo](../../tools/tools-publishing/#hugo), for example, has an extensible framework of shortcodes that let you  create your own features. Many tools, including [MkDocs](../tools/tools-publishing/#mkdocs), use the [Python-Markdown Extensions](https://python-markdown.github.io/extensions/), which offer additional formatting capabilities out of the box. There are also more complex systems that work with Markdown, such as [Markdown+Math](https://marketplace.visualstudio.com/items?itemName=goessner.mdmath), which displays LaTeX math, and [Mermaid](https://mermaid-js.github.io/mermaid/#/), which generates diagrams.
 
 **The command line**  
 Some of the recipes in this guide involve at least some typing on the command line. You'll definitely need to use the command line a little bit when you're working with [Hugo](../../tools/tools-publishing/#hugo), [MkDocs](../../tools/tools-publishing/#mkdocs), or [Pandoc](../../tools/tools-publishing/#pandoc). 
@@ -94,6 +94,3 @@ Some of the recipes in this guide use [Git](https://git-scm.com/). Git is very p
 
 **Other documentation tools**
 The point of Markdown is to produce content that can be published and consumed in another format&mdash;originally HTML, and now Word, slides, PDFs, and other formats. You should know something about tools like Acrobat, Google Drive, Microsoft Office, and other places where your Markdown might end up.
-
-
-

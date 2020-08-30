@@ -1,6 +1,6 @@
 # Publish documentation with MkDocs
 
-[MkDocs](https://www.mkdocs.org/) is a static site generator designed for documentation. It's fairly easy to use, though it does require some work on the command line. Like some other tools, it uses the [Git wiki structure](../../tools/tools-publishing#git-wiki-structure)&mdash;which means you can even use [Git wiki](../recipes-git-wiki/) to develop the content.
+[MkDocs](https://www.mkdocs.org/) is a static site generator designed for documentation. It's fairly easy to use, though it does require some comfort with the command line. Like some other tools, it uses the [Git wiki structure](../../tools/tools-publishing#git-wiki-structure)&mdash;which means you can even use [Git wiki](../recipes-git-wiki/) to develop the content.
 
 To install MkDocs, use your operating system's package manager:
 
@@ -8,7 +8,7 @@ To install MkDocs, use your operating system's package manager:
 - macOS: [Homebrew](https://brew.sh/)
 - Windows: [Chocolatey](https://chocolatey.org/)
 
-Because MkDocs is based on Python, you can also install manually install it using the `pip` tool.
+Because MkDocs is based on Python, you can also install it using the `pip` tool.
 
 ## Ingredients
 
@@ -26,7 +26,6 @@ Because MkDocs is based on Python, you can also install manually install it usin
 
 This recipe goes well with:
 
-- Working by yourself on your local hard drive
 - [Centralized Git workflow](../recipes-centralized-workflow/)
 - [GitHub flow](../recipes-gitflow/)
 
@@ -41,11 +40,16 @@ As you might have guessed, `index.md` is a congratulatory default first page, an
 
 ## Live preview
 
-The command `mkdocs serve` starts a webserver that lets you preview your content as you create it. Whenever you save a Markdown file, MkDocs does its best to update the preview&mdash;sometimes if you change the site navigation, it can't keep up. When that happens, just use Control-C to stop the server and then type the command again to start it.
+The command `mkdocs serve` starts a webserver that lets you preview your content as you create it. 
+
+!!! note
+    You must run `mkdocs serve` in the directory that contains the `mkdocs.yml` file.
+
+Whenever you save a Markdown file, MkDocs does its best to update the preview. Sometimes if you change the site navigation, it can't keep up. When that happens, just use Control-C to stop the server and then type the command again to start it.
 
 ![](../img/live-preview.png)
 
-When the webserver starts, it provides information about any broken links in your content, any files that are unused, and where to point your browser to see the content. Here's an abbreviated version of some output I got while working on this website:
+When the webserver starts, it provides information about any broken links in your content, any files that are unused, and where to point your browser to see the content. Here's an abbreviated version of some output I got while working on these recipes:
 
 ```
 $ mkdocs serve
@@ -69,12 +73,11 @@ INFO    -  Browser Connected: http://127.0.0.1:8000/recipes/recipes-centralized-
 
 The default look is fine, but you'll probably want to choose a [theme](https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes). Themes don't just change the look of the site&mdash;they sometimes add extensions and capabilities (such as the [Python Markdown Extensions](https://python-markdown.github.io/extensions/)).
 
-You can add a theme, activate extensions, and set up site navigation in the site configuration file `mkdocs.yml`.
+You can add a theme, activate extensions, and set up site navigation in the site configuration file `mkdocs.yml`:
 
-!!! hint
-    You don't have to set up navigation manually. If you don't, MkDocs provides
-    fairly sensible navigation automatically. But the option is there if you 
-    need that level of control.
+- To add a theme, you download a bunch of files (sometimes by cloning a Git repo) and copy them into your MkDocs project directory, then add the theme name to the `theme` parameter
+- To use the theme's extensions, you list them in the `markdown_extensions` parameter
+- To set up site navigation, list titles and filenames hierarchically in the `nav` parameter
 
 Here's an abbreviated version of my `mkdocs.yml` file:
 
@@ -105,31 +108,37 @@ nav:
     - 'Resources': 'resources/index.md'
 ```
 
-
 To save length, I stripped out a lot of the navigation, but you get the idea.
+
+!!! hint
+    You don't have to set up navigation manually. If you don't, MkDocs provides
+    fairly sensible navigation automatically. But the option is there if you 
+    need that level of control.
 
 ## Working with content
 
-For the most part, working with content is what you would expect. It's just Markdown in Git wiki structure, using the workflow of your choice. Here are a few tips:
+For the most part, working with content is just as you would expect: Markdown in Git wiki structure, using the workflow of your choice. Here are a few tips:
 
 - Links take some getting used to. Each link is relative based on the location of the
-  page in which the link appears. Remember, each file is treated as a folder in the
+  page in which the link appears. Each file is treated as a folder by the
   browser. To link to the "Source control" page from "Run a Git wiki" in the above
   navigational structure, you would add the following link:   
-  `[Source control](../../tools/tools-git.md)`  
-  If you have trouble with a link, look at the output when you run `mkdocs serve`.
+  `[Source control](../../tools/tools-git.md)` 
 - Because all HTML is valid Markdown, you can use HTML. However, you can't use
   Markdown inside a block of HTML.
 - If you choose a theme that includes features like snippets and admonitions, then
   you can do things outside the bounds of normal Markdown. This is very useful, but
-  makes it likely that you can't use your Markdown source files with other toolchains
+  makes it harder to use your Markdown source files with other tools
   (unless you take the fun stuff out).
+  
+!!! hint
+    If you have trouble with a link, look at the output of `mkdocs serve`.
 
 ### Snippets
 
-If you use snippets, the location of the files you include is relative to the top-level directory of your project (`my-project` for example). It's a good idea to create a directory for snippets and then define it in the `base_path` variable in your `mkdocs.yml` file. 
+If you use snippets, the location of the included files is relative to the top-level directory of your project (`my-project` for example). It's a good idea to create a directory for snippets and then define it in the `base_path` variable in your `mkdocs.yml` file. 
 
-I created a directory called `snippets` and specified it as shown above. That way, I can include snippets using only the filename and I don't have to think about a relative path from the page where I am using the snipppet:
+I created a directory called `snippets` and defined it as shown in the `mkdocs.yaml` sample above. That way, I can include snippets using only the filename and I don't have to think about a relative path from the page where I am using the snipppet:
 
 <pre>&#45;-8<-- "github-flow-snippet.html"</pre>
 
@@ -139,7 +148,12 @@ I created a directory called `snippets` and specified it as shown above. That wa
 
 ## Building and publishing
 
-The `mkdocs build` command builds the website in a directory called `site`. To publish the site, use FTP to transfer the contents of that directory to a folder on a webserver.
+The `mkdocs build` command builds the website in a directory called `site`. 
+
+!!! note
+    You must run `mkdocs build` in the directory that contains the `mkdocs.yml` file.
+
+To publish the site, use FTP to transfer the contents of that directory to a folder on a webserver.
 
 !!! hint
     To prevent Git from tracking changes to the `site` directory, create a file called

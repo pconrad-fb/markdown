@@ -1,13 +1,17 @@
 # Templates
 
+Use these templates as starting points for slide presentations.
+
 ## DZSlides
 
-Tell where you put it, link to recipe
+Save this text as a Markdown file, then use Pandoc to convert it to a DZSlides presentation. 
+
+- See [Create a DZSlides presentation](../../recipes/recipes-slides-dzslides/)
 
 ```
 % DZslides template for Pandoc
 % Peter Conrad
-% 26 November 2019
+% 26 November 2020
 
 # Section titles
 
@@ -158,14 +162,16 @@ Don't use inline code or code blocks. They don't look quite right.
 
 ```
 
-## Powerpoint
+## PowerPoint
 
-Tell where you put it, link to recipe
+Save this as a Markdown file and then use Pandoc to convert it to a PowerPoint presentation.
+
+- See [Create a PowerPoint presentation](../../recipes/recipes-slides)
 
 ```
 % Pandoc Template for Powerpoint
 % Peter Conrad
-% 22 November 2019
+% 22 November 2020
 
 # Section Title
 
@@ -316,11 +322,11 @@ Speaker notes go here
 
 ## Remark
 
-Tell where you put it, link to recipe
+Copy and paste this template between the opening and closing `<textarea id="source">` tags in the Remark boilerplate HTML. 
+
+- See [Create a Remark presentation](../../recipes/recipes-slides-remark/)
 
 ```
-    <textarea id="source">
-
 class: center, middle
 
 # Title
@@ -395,7 +401,4 @@ Speaker notes go here
 class: center, middle
 
 # Thank you
-
-
-    </textarea>
 ```

@@ -100,3 +100,7 @@ pandoc -t dzslides -s myslides.md -o myslides.htm
 
 The `-s` option tells Pandoc to create a standalone presentation, including all the CSS, HTML, and JavaScript needed to display it. You can view the resulting HTML file in a browser.
 
+
+## Next steps
+
+- Check out the [DZSlides template](../../resources/templates/#dzslides)

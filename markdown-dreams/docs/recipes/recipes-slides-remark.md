@@ -1,14 +1,12 @@
 # Create a Remark presentation
 
-Remark is a standalone slide presentation that you edit directly. You create slides in your favorite Markdown editor, then paste them into a specific place in the HTML file. 
+Remark is a standalone slide presentation tool that you edit directly and view in a browser. You create slides in your favorite Markdown editor, then paste them into a specific place in the HTML file. 
 
 There are three ways to use Remark:
 
-- [`boilerplate-single.html`](https://github.com/gnab/remark/blob/develop/boilerplate-single.html) &ndash; a standalone presentation containing the entire JavaScript 
-- [`boilerplate-local.html`](https://github.com/gnab/remark/blob/develop/boilerplate-local.html) &ndash; a standalone presentation that references the JavaScript from another local file
-- [`boilerplate-remote.html`](https://github.com/gnab/remark/blob/develop/boilerplate-remote.html) &ndash; a presentation that references the JavaScript from online
-
-The first option is a long file that might be confusing to edit, but contains everything you need, making it the most "standalone" of the three choices. The other two are easier to edit because the JavaScript is in a separate file. Because `boilerplate-remote.html` calls the JavaScript online, a network connection is required.
+- [`boilerplate-single.html`](https://github.com/gnab/remark/blob/develop/boilerplate-single.html) &ndash; a standalone presentation containing the entire JavaScript code
+- [`boilerplate-local.html`](https://github.com/gnab/remark/blob/develop/boilerplate-local.html) &ndash; a standalone presentation that references the JavaScript code from a local file
+- [`boilerplate-remote.html`](https://github.com/gnab/remark/blob/develop/boilerplate-remote.html) &ndash; a presentation that references the JavaScript code online
 
 !!! hint
      If you're not sure which version to choose, start with `boilerplate-remote.html`
@@ -110,3 +108,6 @@ Any changes you save from the text editor show up in the browser when you reload
     the entire folder wherever you need it, knowing that the presentation will work.
 
 
+## Next steps
+
+- Check out the [Remark template](../../resources/templates/#remark)

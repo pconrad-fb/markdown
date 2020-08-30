@@ -1,9 +1,9 @@
 # Git basics
 
-This page has the workflows and commands you'll use in the recipes, and some hints to get you out of trouble. 
+This page describes the workflows and commands you'll use in the recipes, and provides a few hints to get you out of trouble. 
 
 !!! hint
-    It might not be worth it to read through this page all the way through. Just 
+    You don't have to read through this page all the way through. Just 
     refer to the parts you need. The recipes link to them.
 
 ## Branching workflows
@@ -44,7 +44,7 @@ Here's how your day looks in the GitHub flow.
 
 --8<-- "github-flow-snippet.html"
 
-Merge conflicts in the same branch are less likely, because you are creating your own branches and other people don't necessarily work in your branch with you. Before you push your branch to the remote repo, you can [pull](#pull) from `master` again and merge any conflicts locally.
+Merge conflicts in your working branches are less likely, because own your branches and other people don't necessarily work in them with you. Conflicts are more likely to happen between your working branch and the `master` branch on the remote repo. Before you push your branch to the remote repo, you can [pull](#pull) from `master` again and merge any conflicts locally.
 
 !!! hint
     After you've pushed, approved, and merged your work, you can delete
@@ -312,21 +312,21 @@ So you've edited a file in the wrong branch. What you'd like to be able to do is
 
 1. Make sure you're in the right directory.
 2. Use `git status` to check what branch you're on and what changes Git knows about.
-2. If necessary, switch to the correct branch. For example:
-
+2. Make sure you're in the branch where you were erroneously working. For example:
    ```
-   $ git checkout -b the-branch 
-    Switched to branch 'the-branch'
-    
+   $ git checkout -b the-wrong-branch 
+    Switched to branch 'the-wrong-branch'
    ```
-1. In the branch where you were erroneously working, stash your uncommitted changes:  
-
+1. Stash your uncommitted changes:  
    ```
    $ git stash
    ```
-   
-1. Switch to the branch you wish you had been working in, and apply the changes there:
-
+1. Switch to the branch you wish you had been working in:
+   ```
+   $ git checkout -b the-wrong-branch 
+    Switched to branch 'the-wrong-branch'
+   ```
+1. Use `stash` to apply the changes there:
    ```
    $ git stash apply
    ```
@@ -356,11 +356,13 @@ You opened a file to look at it, but then your cat walked across the keyboard. Y
    ```
    git checkout -- dont-change-this.md
    ```
-
+   
+!!! hint
+    The output of the `git status command` tells you how to use `git checkout` this way.
 
 ### Staged too soon
 
-You edited the right file the right way, but then you added it to the staging area too hastily. You don't want to undo your changes to the file, but you would like to remove it from the next commit. This is one of the uses of `reset`. You can also use `reset` to do more drastic rollbacks. You can undo entire commits if you want.
+You edited the right file the right way, but then you added it to the staging area too hastily. You don't want to undo your changes to the file, but you would like to remove it from the next commit. This is one of the uses of `reset`. You can also use `reset` to do more drastic rollbacks&mdash;you can undo entire commits if you want.
 
 1. Make sure you're in the right directory.
 2. Use `git status` to check what branch you're on and what changes Git knows about.
@@ -383,6 +385,10 @@ You edited the right file the right way, but then you added it to the staging ar
    ```
    git reset HEAD dont-commit-this.md
    ```
+   
+!!! hint
+    The output of the `git status command` tells you how to use `reset` to unstage changes.
+    
 
 ### Merge conflicts
 
@@ -399,7 +405,7 @@ Other content that someone else changed
 ```
 
 
-`HEAD` is a pointer to the last commit in  the branch you're on. The other label can be another branch name or a number representing another commit.
+`HEAD` is a pointer to the most recent commit in  the branch you're on. The other label can be another branch name or a number representing another commit.
 
 All you need to do is decide which version of the content you want to keep and then delete the merge conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`).
 
