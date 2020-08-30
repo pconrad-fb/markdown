@@ -47,7 +47,7 @@ The command `mkdocs serve` starts a webserver that lets you preview your content
 
 Whenever you save a Markdown file, MkDocs does its best to update the preview. Sometimes if you change the site navigation, it can't keep up. When that happens, just use Control-C to stop the server and then type the command again to start it.
 
-![](../img/live-preview.png)
+![Screenshot of MkDocs live preview](../img/live-preview.png)
 
 When the webserver starts, it provides information about any broken links in your content, any files that are unused, and where to point your browser to see the content. Here's an abbreviated version of some output I got while working on these recipes:
 

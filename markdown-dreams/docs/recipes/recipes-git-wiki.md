@@ -1,11 +1,5 @@
 # Edit a Git wiki
 
-<!--
-TO DO
-
-Add GH and Linux instructions
--->
-
 A Git repository comes with a wiki, where people can read and collaboratively edit documentation. You can create a wiki to document projects or code stored in the repository, or you can just use a repository for its wiki capability.
 
 !!! note
@@ -37,7 +31,7 @@ The easiest way to set up the wiki is by logging onto your Git host and adding i
     1. In a browser, log on to Bitbucket.
 	1. Under "Repository settings" look for "Features" and click **Wiki**
 	1. Select **Public wiki** and save.  
-       ![](../img/recipes-git-wiki-create.png)
+       ![Wiki dialog](../img/recipes-git-wiki-create.png)
 
 === "GitHub and GitHub Desktop"
     The GitHub documentation on [Wikis](https://docs.gitlab.com/ee/user/project/wiki/)
@@ -45,9 +39,9 @@ The easiest way to set up the wiki is by logging onto your Git host and adding i
     
     1. In a browser, log on to GitHub.
     1. Click the **Settings** button:  
-       ![](../img/github-settings.png)
+       ![Settings button](../img/github-settings.png)
     1. Scroll down to "Features" and select **Wikis**:
-       ![](../img/git-wikis.png)
+       ![Features section of settings](../img/git-wikis.png)
    
 ## Edit content on the host    
    
@@ -72,13 +66,13 @@ To work on the wiki locally, clone the wiki to a local repository:
 === "Bitbucket and Sourcetree"
     1. Go to your online repository and click **Wiki**.
     2. Click **Clone wiki** then **Clone in Sourcetree**.  
-       ![](../img/recipes-git-repo-bb-clone-wiki.png)
+       ![Clone in Sourcetree button](../img/recipes-git-repo-bb-clone-wiki.png)
     1. Make sure the local path shows the directory where
        you want to clone the repository, and click **Clone**.
        
 === "GitHub and GitHub Desktop"
     1. Go to your online repository and click the **Wiki** button:  
-       ![](../img/github-wiki-button.png)
+       ![Wiki button](../img/github-wiki-button.png)
     1. Copy the **Clone this wiki locally** URL.
     1. In GitHub Desktop, click **File > Clone repository**.
     1. Paste the URL, make sure the local path shows the directory where
@@ -136,7 +130,7 @@ After you commit and push the changes, take a look in your online wiki:
 	- In Bitbucket, click the name of the wiki.
 	- In GitHub, click **Pages**.
 1. Navigate to the page you created.  
-   ![](../img/recipes-git-wiki-bb-something.png)
+   ![Screenshot of hte wiki page](../img/recipes-git-wiki-bb-something.png)
 1. Try the `home` link.
 
 ## Next steps

@@ -34,7 +34,7 @@ A *repository* is where you keep your work. You'll need a *local repository* whe
 
     1. Sign up with [Bitbucket](https://bitbucket.org/) and log on.
     2. Click the new repository button (the plus sign):  
-      ![Add a repository](../img/recipes-git-repo-bb-add.png)
+      ![New repository buttoon](../img/recipes-git-repo-bb-add.png)
     3. Type a repository name, make sure it's set to be a public repository, and 
       click **Create repository**.
     4. Choose or create a directory on your computer where you would like to keep your 
@@ -48,11 +48,11 @@ A *repository* is where you keep your work. You'll need a *local repository* whe
 
     1. Sign up with [GitHub](https://bitbucket.org/) and log on.
     2. Click the plus sign and select **New repository**:   
-       ![](../img/github-new-repository.png)
+       ![New repository menu](../img/github-new-repository.png)
     1. Type a repository name, make sure it's set to be a public repository, and 
       click **Create repository**.
     1. Click **Set up in Desktop** to open the repository in GitHub Desktop:  
-       ![](../img/github-set-up-in-desktop.png)
+       ![Set up in desktop button](../img/github-set-up-in-desktop.png)
     6. Choose a folder on your computer for the local copy of the repository
        and click **Clone**.
 

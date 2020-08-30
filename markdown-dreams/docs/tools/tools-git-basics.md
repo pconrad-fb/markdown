@@ -17,7 +17,7 @@ There are many possible branching workflows, but only two in this guide:
 
 In the centralized Git workflow, everyone works on a single branch (usually called `master`). Changes are committed to the local repository on each contributor's own computer. From time to time, each user pushes changes to a remote Git repository.
 
-![](../img/git-centralized-workflow.png)
+![Diagram of the Git centralized workflow](../img/git-centralized-workflow.png)
 
 Here are the operations a contributor performs when working in the centralized Git workflow.
 
@@ -36,7 +36,7 @@ The following recipes use the centralized Git workflow:
 
 In the GitHub flow, you start a new branch based on `master` whenever you start a group of related tasks. How you organize those tasks, and how you decide which ones belong in a branch together, is up to you.
 
-![](../img/github-flow.png)
+![Diagram of the GitHub flow](../img/github-flow.png)
 
 Just like in the centralized workflow, you commit changes frequently to your own local repository. When you push to the remote repo, you create a copy of your branch there so that others can review your changes before they are merged back into `master`.
 
@@ -84,9 +84,9 @@ The Git pull command fetches and downloads content from your remote repository, 
         - The bold text under **Current repository** tells you the repository
     1. Select **Repository > Pull** or:  
         1. Click the **Fetch origin** button.  
-           ![](../img/githubdesktop-fetch-origin-button.png)  
+           ![Fetch origin button](../img/githubdesktop-fetch-origin-button.png)  
         1. Click the **Pull origin** button.  
-           ![](../img/githubdesktop-pull-origin-button.png)  
+           ![Pull origin button](../img/githubdesktop-pull-origin-button.png)  
 
 === "Linux command line"
     1. Make sure you're on the right branch in the correct repository:
@@ -116,11 +116,11 @@ Git knows when you make changes to your files. When you want to save those chang
     1. Look for the files you changed in the Unstaged files pane. Select
        the files you want to stage&mdash;in most cases, you can just click 
        **Stage All.**  
-       ![](../img/sourcetree-unstaged-files.png)
+       ![Unstaged files](../img/sourcetree-unstaged-files.png)
     1. Make sure you see the right files in the Staged files pane.  
-       ![](../img/sourcetree-staged-files.png)
+       ![Staged files](../img/sourcetree-staged-files.png)
     1. Type a short commit message and click **Commit**.  
-       ![](../img/sourcetree-commit-message.png)
+       ![Commit message](../img/sourcetree-commit-message.png)
 
 === "GitHub Desktop"
     In GitHub Desktop, you can stage and commit your files in one step.
@@ -128,7 +128,7 @@ Git knows when you make changes to your files. When you want to save those chang
     1. Make sure you're on the right branch in the correct repository.
     1. Look for the files you changed in the Changes tab. Unselect any files you don't
        want to change&mdash;most of the time, you can leave all the checkboxes checked.  
-       ![](../img/githubdesktop-commit.png)
+       ![Changes tab](../img/githubdesktop-commit.png)
     1. Type a short commit message.
     1. Make sure the **Commit** button refers to the correct branch
        ("Commit to master," for example).
@@ -161,14 +161,14 @@ Git knows when you make changes to your files. When you want to save those chang
     
     1. Make sure you're on the right branch in the correct repository.  
     1. Select **Repository > Push** or click the **Push** button.  
-       ![](../img/sourcetree-push-button.png)
+       ![Push button](../img/sourcetree-push-button.png)
 
 
 === "GitHub Desktop"
      
     1. Make sure you're on the right branch in the correct repository.
     1. Select **Repository > Push** or click the **Push origin** button.  
-       ![](../img/githubdesktop-push.png)
+       ![Push origin button](../img/githubdesktop-push.png)
 
 === "Linux command line"
 
@@ -191,9 +191,9 @@ Git knows when you make changes to your files. When you want to save those chang
 
     1. [**Pull**](../../getting-started-getting-started-git-basics/#pull) from master.
     1. Click the **Branch** button:  
-       ![](../img/sourcetree-branch-button.png)
+       ![Branch button](../img/sourcetree-branch-button.png)
     2. Type a descriptive name and click **Create Branch**.  
-       ![](../img/sourcetree-new-branch.png)
+       ![Create branch dialog](../img/sourcetree-new-branch.png)
     3. Look under **Branches** to see that you're on the new branch.
     
     You can switch to a different branch by clicking it in the list of branches.
@@ -204,11 +204,11 @@ Git knows when you make changes to your files. When you want to save those chang
 
     1. [**Pull**](../../getting-started-getting-started-git-basics/#pull) from master.
     1. Click the **Current branch** tab and click **New branch**:  
-       ![](../img/github-desktop-new-branch-button.png)
+       ![New branch button](../img/github-desktop-new-branch-button.png)
     1. Type a descriptive name and click **Create branch**:  
-       ![](../img/github-desktop-create-branch.png)
+       ![Create branch dialog](../img/github-desktop-create-branch.png)
     1. Click **Publish branch**:  
-       ![](../img/github-desktop-publish-branch.png)
+       ![Publish branch dialog](../img/github-desktop-publish-branch.png)
     3. Look under **Branches** to see that you're on the new branch.
 
     You can switch to a different branch by clicking it in the list of branches.
@@ -248,20 +248,20 @@ Git knows when you make changes to your files. When you want to save those chang
 
     1. Click **Repository > Create pull request**.
     1. In the dialog that appears, click **Create Pull Request On Web**:  
-       ![](../img/sourcetree-create-pull-request.png)
+       ![Create pull request dialog](../img/sourcetree-create-pull-request.png)
     1. Type a description, add reviewers, and click **Create pull request**:  
-       ![](../img/bitbucket-create-pull-request.png)
+       ![Create pull request form on the web](../img/bitbucket-create-pull-request.png)
 
 
 === "GitHub and GitHub Desktop"
 
     1. When you push, the banner with the Push button changes "Create a pull
        request from your current branch." Click **Create Pull Request**:  
-       ![](../img/github-desktop-create-pull-request.png)
+       ![Create pull request button](../img/github-desktop-create-pull-request.png)
     1. The browser opens a page with a form for creating a pull request:
-       ![](../img/github-create-pull-request.png)
+       ![Open a pull request form](../img/github-create-pull-request.png)
     1. Click the gear next to **Reviewers** to add reviewers:  
-       ![](../img/github-pull-request-reviewers.png)
+       ![Reviewers form](../img/github-pull-request-reviewers.png)
     1. Click **Create pull request**.
 
 === "Linux command line"
@@ -294,13 +294,13 @@ Merge your branch online in the web interface of your Git host.
     
 
     1. When your pull request is sufficiently approved, click **Merge**:
-       ![](../img/bitbucket-pull-request-buttons.png)
+       ![Merge button](../img/bitbucket-pull-request-buttons.png)
 
 === "GitHub"
      
 
     1. When your pull request is sufficiently approved, click **Merge**:  
-       ![](../img/github-merge-pull-request.png)
+       ![Merge button](../img/github-merge-pull-request.png)
 
 ## Getting out of trouble
 

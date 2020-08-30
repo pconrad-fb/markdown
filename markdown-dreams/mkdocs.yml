@@ -37,7 +37,7 @@ nav:
         - 'Publish a website with Hugo': 'recipes/recipes-hugo.md'
         - 'Publish documentation with MkDocs': 'recipes/recipes-mkdocs.md'
         - 'Create a Word document': 'recipes/recipes-pandoc-word.md'
-        - 'Create an eBook': 'recipes/recipes-pandoc-ebook.md'
+        - 'Create an ePub book': 'recipes/recipes-pandoc-ebook.md'
         - 'Create a PDF': 'recipes/recipes-pandoc-pdf.md'
         - 'Grab a web page': 'recipes/recipes-pandoc-web.md'
         - 'Create a Powerpoint presentation': 'recipes/recipes-slides.md'

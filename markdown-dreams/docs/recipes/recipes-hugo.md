@@ -8,8 +8,6 @@ To install Hugo, use your operating system's package manager:
 - macOS: [Homebrew](https://brew.sh/)
 - Windows: [Chocolatey](https://chocolatey.org/)
 
-You can also download and install the binary, or build it yourself from source.
-
 ## Ingredients
 
 <table>
@@ -100,7 +98,7 @@ draft: true
 
 You must add Markdown content before you can preview the page. A page in Hugo must contain both frontmatter and Markdown content. If either is missing, the page shows `404 page not found` when you try to preview it.
 
-Frontmatter can signal content status inclusing publish and expiry dates, and can contain variables that you can use in templates and in content by creating your own Hugo shortcodes. Variables and shortcodes are outside the scope of this recipe, but the Hugo website has a lot of documentation.
+Frontmatter can signal content status, including publish and expiry dates, and can contain variables that you can use in templates and in content by creating your own Hugo shortcodes. Variables and shortcodes are outside the scope of this recipe, but the Hugo website has a lot of documentation.
 
 If you are migrating content into Hugo from a Git wiki, MkDocs site, or some other source, you will need to add frontmatter to any pages that don't already have it.
 
@@ -113,7 +111,7 @@ $ hugo server -D
 ```
 The `-D` option tell Hugo to include draft pages in the preview. If you omit this option, any page with `draft:true` in the frontmatter is ignored.
 
-![](../img/hugo-preview.png)
+![Screenshot of Hugo live preview](../img/hugo-preview.png)
 
 Hugo is a bit finicky about previewing and building content, and there are a few reasons why pages might not show up in the preview. Make sure each file contains both frontmatter and Markdown, that it doesn't have a publish date in the future or expiry date in the past, and so on.
 
@@ -121,11 +119,11 @@ Hugo is a bit finicky about previewing and building content, and there are a few
 
 Images in Hugo normally go in the `static` directory. Here, I've added a subdirectory called `images` and when I add the image in my Markdown editor it looks like this:
 
-    ![](../../static/images/whatever.png)
+    ![An image](../../static/images/whatever.png)
 
 That makes sense, since that is the correct relative path to the file. When the site is built for local preview, however, the result is this:
 
-    <img src="../../static/images/whatever.png" alt="">
+    <img src="../../static/images/whatever.png" alt="An image">
 
 Unfortunately, that won't work. The actual relative path to the image is: `../../images/whatever.png` instead.
 

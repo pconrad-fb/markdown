@@ -2,7 +2,7 @@
 
 There are many tools for publishing Markdown or converting it for use in other doc tools. We'll focus on the Git wiki, the static site generators Hugo and MkDocs, and Pandoc. We'll also touch on tools for creating presentations.
 
-![](../img/publishing.png)
+![Diagram of publishing tools](../img/publishing.png)
 
 ## Git wiki
 

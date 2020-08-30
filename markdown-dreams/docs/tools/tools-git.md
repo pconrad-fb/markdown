@@ -37,15 +37,15 @@ You can use Git on the command line, but it's even easier if you use a Git clien
     
 ## Git concepts
 
-There's a lot to know about Git. As a writer, you should be able to decide how much you want to learn. You might just want to learn *exactly* enough to do your writing and keep out of trouble. That's the goal here. If you want to learn more, check out [The Git Book](https://git-scm.com/book/en/v2).
-
-There are a lot of Git terms that are confusing. A lot of things that used to be intuitive&mdash;like the idea that we're working on *files* and we need to *lock* them so that someone else can't *check them out* from the *central repository*&mdash; have no currency in the Git world:
+Git is different from older source control systems. A lot of things that used to be intuitive&mdash;like the idea that we're working on *files* and we need to *lock* them so that someone else can't *check them out* from the *central repository*&mdash; have no currency in the Git world:
 
 - There's no *central repository.* A central repository would represent both a bottleneck and a single point of failure, so why do it?
 - No one *checks out* files because there's no central repository.
 - We don't need to *lock* files because we don't have to worry about them being *checked out*.
 
 In fact, we don't care about *files* at all in Git. We only care about *changes.*
+
+There's a lot to know about Git. As a writer, you should be able to decide how much you want to learn. You might just want to learn *exactly* enough to do your writing and keep out of trouble. That's the goal here. If you want to learn more, check out [The Git Book](https://git-scm.com/book/en/v2).
 
 ### What things mean in Git
 

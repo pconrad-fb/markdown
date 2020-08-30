@@ -2,7 +2,7 @@
 
 Once your team or project reaches a certain size, branching is a good way to keep people from accidentally interfering with each other's work. It's also a great way to stage and test code or content before migrating to production. There are many branching strategies, some of them quite complicated. The one I like, and that I have used for documentation in the past, is called [GitHub Flow](https://scottchacon.com/2011/08/31/github-flow.html). It's simple but effective. The **Pull-Work-Commit-Push** steps happen within a working branch.
 
-![](../img/github-flow.png)
+![Diagram of GitHub flow](../img/github-flow.png)
 
 ## What you need
 

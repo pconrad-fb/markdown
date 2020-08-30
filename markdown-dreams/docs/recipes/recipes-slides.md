@@ -56,7 +56,7 @@ The above Markdown contains two slides:
 
 Notice the `:::` character&mdash;this is Pandoc’s fenced div syntax, which lets you do a lot of tricks in various formats. Here, it is just used to delineate the speaker notes.
 
-![](../img/slides-pandoc-powerpoint.png)
+![Screenshot of PowerPoint](../img/slides-pandoc-powerpoint.png)
 
 Not all Markdown formatting is appropriate for slides, but tables work nicely&mdash;and Pandoc provides special formatting that lets you do a few interesting things.
 
@@ -105,7 +105,7 @@ When Pandoc follows these relative links, it starts from the directory where you
 You can use an attribute to scale an image:
 
 ```
-![Alt text](bench.jpg){width=25%}
+![An image](bench.jpg){width=25%}
 ```
 
 When Pandoc renders the image, it is scaled to a percentage of the container where it resides (a column, for example). The alt text is used for a caption.

@@ -1,6 +1,6 @@
-# Overview
+# Create an ePub book
 
-You can use Pandoc to create an ePub book compatible with many readers and suitable for tablets and phones or for self-publishing on [Amazon](https://kdp.amazon.com/en_US/bookshelf).
+You can use Pandoc to create an ePub book suitable for tablets and phones or for self-publishing on [Amazon](https://kdp.amazon.com/en_US/bookshelf).
 
 ## Ingredients
 
@@ -35,7 +35,7 @@ pandoc -o my_book.epub chapter_1.md chapter_2.md
 
 ### Title file
 
-You can specify a title, author, licensing, and other information about the book in a file called `title.txt` at the front of the book, containing YAML that Pandoc uses when it benerates the ePub file.
+You can specify a title, author, licensing, and other information about the book in a file called `title.txt` at the front of the book, containing YAML that Pandoc uses when it generates the ePub file.
 
 Example:
 ```

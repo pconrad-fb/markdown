@@ -67,7 +67,7 @@ You can use normal Markdown image syntax, but you can also use CSS and HTML to c
 .center[<img src="bench.jpg" width=50% height=50%></img>]
 ```
 
-![](../img/slides-remark.png)
+![Screenshot of Remark slide showing image](../img/slides-remark.png)
 
 More complicated CSS is available if you want to experiment further, but is beyond the scope of this recipe.
 

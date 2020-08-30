@@ -48,7 +48,7 @@ Normal Text or Slide Title
 
 Normal text is big enough for a title or announcement on a slide.
 
-![](../img/slides-dzslides.png)
+![Screenshot of a DZSlides slide](../img/slides-dzslides.png)
 
 The layout of slides in DZslides is bold and simple; you probably won't find yourself
 using tables or columns a lot.
@@ -82,10 +82,10 @@ After you create the presentation, which is an HTML file, you need to keep the i
 You can use an attribute to scale an image:
 
 ```
-![Alt text](bench.jpg){width=25%}
+![An image](bench.jpg){width=25%}
 ```
 
-![](../img/slides-dzslides-images.png)
+![Screenshot of another DZSlides slide](../img/slides-dzslides-images.png)
 
 When Pandoc renders the image, it is scaled to a percentage of the container where it resides (the slide, for example). The alt text is used for a caption.
 
@@ -98,7 +98,7 @@ pandoc -t dzslides -s myslides.md -o myslides.htm
 
 ```
 
-The `-s` option tells Pandoc to create a standalone presentation, including all the CSS, HTML, and JavaScript needed to display it. You can view the resulting HTML file in a browser.
+The `-s` option tells Pandoc to create a standalone presentation, including all the CSS, HTML, and JavaScript needed to display it. You can view the presentation by opening the resulting HTML file in a browser.
 
 
 ## Next steps

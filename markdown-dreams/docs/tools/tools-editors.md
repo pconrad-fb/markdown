@@ -39,7 +39,7 @@ Two tools in particular stand out:
 
 ### Ghostwriter
 
-![](../img/ghostwriter.png)
+![Ghostwriter screenshot](../img/ghostwriter.png)
 
 [Ghostwriter](https://wereturtle.github.io/ghostwriter/) (Windows/Linux) is a free and open source split-screen editor that integrates with Pandoc and offers smaller "heads-up display" windows that provide document information and a Markdown cheat sheet.
 	
@@ -49,7 +49,7 @@ Two tools in particular stand out:
 
 ### Joplin
 
-![](../img/tools-joplin.png)
+![Joplin screenshot](../img/tools-joplin.png)
 
 [Joplin](https://joplinapp.org/) (macOS/iOS/Android/Windows/Linux) is an open-source note-taking and to-do application that syncs to DropBox, OneDrive, and other cloud storage. It includes an editor, but also supports the external editor of your choice. It offers end-to-end encryption and can import Evernote notebooks.
 
@@ -59,7 +59,7 @@ Two tools in particular stand out:
 
 ### Typora
 
-![](../img/tools-typora.png)
+![Typora screenshot](../img/tools-typora.png)
 
 [Typora](https://typora.io/) (macOS, Windows, Linux) is a Markdown editor that includes not only a syntax editing mode but a fully WYSIWYG editing experience. It integrates with Pandoc, so it can import and export a number of formats. Typora offers a files and folders view, which means it can be used for longer documents or as a note-taking application.
 
@@ -93,7 +93,7 @@ Browser-based Markdown tools can be an easy, portable way to write Markdown that
 
 ### StackEdit
 
-![](../img/stackedit.png)
+![StackEdit screenshot](../img/stackedit.png)
 
 [StackEdit](https://stackedit.io/) is a full-featured Markdown editor that syncs with DropBox, GitHub, GitLab, and Google Drive. You can import Markdown and HTML files, export with Pandoc, and publish to Blogger, Wordpress, and Zendesk.
 

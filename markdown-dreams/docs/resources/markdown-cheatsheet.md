@@ -70,7 +70,7 @@ Numbered list:
     <td><b>Links</b></td>
     <td>
       You can define links inline or by reference. Reference links have a
-      label&mdash;often, the simplest thing to do us just use a number, like this:
+      label&mdash;text or a number, like this:
       <code>[1]</code>
       <pre>
 This is an [inline-style link](https://www.example.com).
@@ -124,19 +124,20 @@ highlighting:
     <td><b>Blockquotes</b></td>
     <td>
       <pre>
-> Use a greater-than sign plus a space at the beginning of a paragraph. You can add it to the
-start of every line, or just the first line in the paragraph.
+> Use a greater-than sign plus a space at the beginning of a paragraph.  
+You can add it to the start of every line, or just the first line in the  
+paragraph.
 
-> But it looks better to put it at the start of every line. It makes it easier to
-> see which lines are part of the blockquote.
+> But it looks better to put it at the start of every line. This makes it  
+> easier to see which lines are part of the blockquote.
       </pre>
     </td>
   </tr>
   <tr>
     <td><b>Tables</b></td>
     <td>
-      HTML tables are more powerful, more flexible, and more reliable. But some flavors
-      of Markdown include simple table notations. Default alignment is left.
+      Some flavors of Markdown include simple table syntax.  
+      Default alignment is left.
       <pre>
 | Header          | Row is          | mandatory          |
 | --------------- |:---------------:| ------------------:|
@@ -162,9 +163,9 @@ ___
   <tr>
     <td><b>Comments</b></td>
     <td>
-    There are two ways to write comments: HTML-style comments, which are rendered as
-    part of the HTML source code, and two kinds of link-style comments that are a bit of
-    a hack and don't get rendered at all. 
+    There are two ways to write comments: HTML-style comments, which are rendered as  
+    part of the HTML source code, and two kinds of link-style comments that are a bit  
+    of a hack and don't get rendered at all. 
       <pre>
 &lt;!-- HTML-style comments --&gt; 
   are visible in Markdown and in rendered HTML.  
@@ -180,10 +181,10 @@ ___
   <tr>
     <td><b>HTML and special characters</b></td>
     <td>
-    HTML is part of Markdown. You can use HTML to insert tables, formatting, special
-    characters, and other features that Markdown doesn't support directly. HTML tables
-    are often better and easier than Markdown tables. You can escape characters
-    with a backslash (\) or use HTML codes:
+    HTML is part of Markdown. You can use HTML to insert tables, formatting, special  
+    characters, and other features that Markdown doesn't support directly. HTML tables  
+    are often better and easier than Markdown tables. You can escape characters  
+     with a backslash (\) or use HTML codes:
       <pre>
 &amp;mdash; em-dash  
 &amp;ndash; en-dash  
