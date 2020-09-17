@@ -50,14 +50,8 @@ Normal text is big enough for a title or announcement on a slide.
 
 ![Screenshot of a DZSlides slide](../img/slides-dzslides.png)
 
-The layout of slides in DZslides is bold and simple; you probably won't find yourself
+The layout of slides in DZslides is simple; you probably won't find yourself
 using tables or columns a lot.
-
-### Special Pandoc formatting
-
-Pandoc includes a number of formatting tricks that you might find useful. One of the most useful is fenced div syntax, which uses groups of colon characters as shorthand. 
-
-The curly braces let you define *attributes* such as identifiers, classes, and key/value pairs on headers, images, and a few other elements in Pandoc. In the above example, the attributes specify the names and widths of the divs.
 
 ### Images
 
@@ -79,7 +73,7 @@ After you create the presentation, which is an HTML file, you need to keep the i
     the entire folder wherever you need it, knowing that all the images for the
     presentation will work.
 
-You can use an attribute to scale an image:
+Pandoc provides syntax for scaling an image:
 
 ```
 ![An image](bench.jpg){width=25%}
@@ -87,7 +81,7 @@ You can use an attribute to scale an image:
 
 ![Screenshot of another DZSlides slide](../img/slides-dzslides-images.png)
 
-When Pandoc renders the image, it is scaled to a percentage of the container where it resides (the slide, for example). The alt text is used for a caption.
+When Pandoc renders the image, it is scaled to a percentage of the container where it resides (the slide, in most cases). The alt text is used for a caption.
 
 ## Creating the presentation
 

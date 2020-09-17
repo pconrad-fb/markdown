@@ -2,11 +2,16 @@
 
 You can use Git to help a team collaborate on informal or internal documents in a very simple way. If you use a graphical Git client and a WYSIWYG Markdown editor, the workflow is easy for people who like things simple. At the same time, Markdown in Git is powerful enough for engineers and integrates with their tools.
 
-The centralized Git workflow can be an effective way for content creators, managers, and engineers to collaborate on non-production content such as specifications, planning documents, newsletters, internal documentation, and the like.
+The centralized workflow can be an effective way for content creators, managers, and engineers to collaborate on non-production content such as specifications, planning documents, newsletters, internal documentation, and the like.
 
 ![Diagram of centralized Git workflow](../img/git-centralized-workflow.png)
 
-In this workflow, everyone works on the same branch. While this makes things easy for simple collaboration, it will cause headaches for larger teams, more complex content, or in a production environment. If you're publishing a large website or documentation set with a team of collaborators, you should consider using [GitHub Flow](../recipes-gitflow/) instead.
+In this workflow, everyone works on the same branch. This makes things easy for simple collaboration.
+
+!!! Note
+    If you're publishing a large website or documentation set in a production 
+    environment with with a substantial number of
+    collaborators, you should consider using [GitHub Flow](../recipes-gitflow/) instead.
 
 ## Ingredients
 

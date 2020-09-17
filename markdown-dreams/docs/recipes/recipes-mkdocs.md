@@ -1,6 +1,6 @@
 # Publish documentation with MkDocs
 
-[MkDocs](https://www.mkdocs.org/) is a static site generator designed for documentation. It's fairly easy to use, though it does require some comfort with the command line. Like some other tools, it uses the [Git wiki structure](../../tools/tools-publishing#git-wiki-structure)&mdash;which means you can even use [Git wiki](../recipes-git-wiki/) to develop the content.
+[MkDocs](https://www.mkdocs.org/) is a static site generator designed for documentation. It's fairly easy to use, though it does require some comfort with the command line. Like some other tools, it uses the [Git wiki structure](../../tools/tools-publishing#git-wiki-structure)&mdash;which means you can use [Git wiki](../recipes-git-wiki/) to develop the content.
 
 To install MkDocs, use your operating system's package manager:
 
@@ -31,12 +31,15 @@ This recipe goes well with:
 
 ## Creating a project
 
-You can create a new doc set just by typing `mkdocs new my-project` and starting to add content. Of course, if you plan to use one of the Git workflows, you should run this command inside your local Git repository. The `mkdocs new` command sets up a directory that contains two things:
+You can create a new doc set just by typing `mkdocs new my-project` and starting to add content. The `mkdocs new` command sets up a directory that contains two things:
 
 - A directory called `docs` containing `index.md`
 - A file called `mkdocs.yml` that you use for configuring your project.
 
 As you might have guessed, `index.md` is a congratulatory default first page, and you can change it, add directories and files, and start building the site in the `docs` directory.
+
+!!! Hint
+    For source control and collaboration, create the project in a Git repo.
 
 ## Live preview
 
@@ -45,7 +48,9 @@ The command `mkdocs serve` starts a webserver that lets you preview your content
 !!! note
     You must run `mkdocs serve` in the directory that contains the `mkdocs.yml` file.
 
-Whenever you save a Markdown file, MkDocs does its best to update the preview. Sometimes if you change the site navigation, it can't keep up. When that happens, just use Control-C to stop the server and then type the command again to start it.
+Whenever you save a Markdown file, MkDocs does its best to update the preview. Sometimes if you change the site navigation, it can't keep up. When that happens, just use Control-C to stop the server and then type the command again to start it. 
+
+Here is a screenshot of a Markdown file in Ghostwriter on the left, with the MkDocs preview of the same content on the right.
 
 ![Screenshot of MkDocs live preview](../img/live-preview.png)
 
@@ -73,10 +78,11 @@ INFO    -  Browser Connected: http://127.0.0.1:8000/recipes/recipes-centralized-
 
 The default look is fine, but you'll probably want to choose a [theme](https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes). Themes don't just change the look of the site&mdash;they sometimes add extensions and capabilities (such as the [Python Markdown Extensions](https://python-markdown.github.io/extensions/)).
 
-You can add a theme, activate extensions, and set up site navigation in the site configuration file `mkdocs.yml`:
+To add a theme, you download a bunch of files (sometimes by cloning a Git repo) and copy them into your MkDocs project directory, then add the theme name to the `theme` parameter in the site configuration file `mkdocs.yml`.
 
-- To add a theme, you download a bunch of files (sometimes by cloning a Git repo) and copy them into your MkDocs project directory, then add the theme name to the `theme` parameter
-- To use the theme's extensions, you list them in the `markdown_extensions` parameter
+This file is also where you activate the theme's extensions and set up site navigation:
+
+- To use the theme's extensions, list them in the `markdown_extensions` parameter
 - To set up site navigation, list titles and filenames hierarchically in the `nav` parameter
 
 Here's an abbreviated version of my `mkdocs.yml` file:

@@ -76,7 +76,7 @@ More complicated CSS is available if you want to experiment further, but is beyo
 Remark needs three things to work: boilerplate HTML, the `remark.js` script, and your Markdown.
 
 1. Open [`boilerplate-remote.html`](https://github.com/gnab/remark/blob/develop/boilerplate-remote.html) in a text editor.
-1. Add your Markdown in the source text area. Example:
+1. Add your Markdown in the `source` text area. Example:
    ```
     <textarea id="source">
 

@@ -2,13 +2,14 @@
 
 Markdown editors let you edit your content and often integrate with conversion and publishing tools. There are a few different types available:
 
-- [Dedicated Markdown editors](#dedicated-markdown-editors) usually let you write and
+- [Dedicated Markdown editors](#dedicated-markdown-editors) let you write and
   edit Markdown code with syntax highlighting, and often have a preview pane or separate
   preview window.
-- [Code editors](#code-editors) can be quite extensible and sophisticated, offering 
+- [Code editors](#code-editors), designed for editing various kinds of source code,
+  can be quite extensible and sophisticated, offering 
   plugins and packages that provide many of the capabilities of a dedicated Markdown 
   editor.
-- [Text editors](#text-editors) are often more general-purpose than dedicated Markdown
+- [Text editors](#text-editors) are more general-purpose than dedicated Markdown
   editors, and may or may not offer Markdown syntax highlighing or preview.
 - [Browser-based tools](#browser-based-tools) range from simple Markdown preview tools
   to full-featured writing and publishing tools that integrate with source control,
@@ -22,8 +23,6 @@ I have used Joplin and iA Writer, but I use Typora and Ghostwriter most often.
 
 Most dedicated editors are designed so that you edit the Markdown directly, with syntax highlighting to make it easier to see that's going on. That's the original intention behind Markdown, after all: to provide formatting tools that are easy to read and don't require you to lift your fingers from the keys. 
 
-For general purposes, many dedicated Markdown editors are fairly similar, differing in only a few features.
-
 Two tools in particular stand out:
 
 - Joplin, a specialized editor for writing notes and to-do lists
@@ -31,7 +30,7 @@ Two tools in particular stand out:
 
 ### Byword
 
-[Byword](https://bywordapp.com/) (macOS/iOS) provides syntax highlighting and an in-app preview, letting you exprt to a few formats or publish directly to Medium, WorkPress, Blogger, Tumblr, and Evernote.
+[Byword](https://bywordapp.com/) (macOS/iOS) provides syntax highlighting and an in-app preview, letting you export to a few formats or publish directly to Medium, WorkPress, Blogger, Tumblr, and Evernote.
 
 ### Caret
 
@@ -45,7 +44,7 @@ Two tools in particular stand out:
 	
 ### iA Writer
 
-[iA Writer](https://ia.net/writer) (macOS/iOS/Android/Windows) is intended for writers who want to focus. It integrates with Dropbox, provides the expected preview capabilities, and imports and exports to Microsoft Word.
+[iA Writer](https://ia.net/writer) (macOS/iOS/Android/Windows) is intended for writers who want to focus. It integrates with Dropbox and imports and exports to Microsoft Word.
 
 ### Joplin
 
@@ -61,7 +60,7 @@ Two tools in particular stand out:
 
 ![Typora screenshot](../img/tools-typora.png)
 
-[Typora](https://typora.io/) (macOS, Windows, Linux) is a Markdown editor that includes not only a syntax editing mode but a fully WYSIWYG editing experience. It integrates with Pandoc, so it can import and export a number of formats. Typora offers a files and folders view, which means it can be used for longer documents or as a note-taking application.
+[Typora](https://typora.io/) (macOS, Windows, Linux) is a Markdown editor that includes not only a syntax editing mode but a fully WYSIWYG editing experience. It integrates with Pandoc, so it can import and export a number of formats. Typora offers a files and folders view, which is helpful when working on longer documents or taking notes.
 
 ## Code editors
 

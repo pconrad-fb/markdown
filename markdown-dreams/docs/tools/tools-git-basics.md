@@ -3,23 +3,24 @@
 This page describes the workflows and commands you'll use in the recipes, and provides a few hints to get you out of trouble. 
 
 !!! hint
-    You don't have to read through this page all the way through. Just 
-    refer to the parts you need. The recipes link to them.
+    You don't have to read this page all the way through. Just 
+    refer to the parts you need. The recipes link directly to the
+    instructions you need.
 
-## Branching workflows
+## Workflows
 
-There are many possible branching workflows, but only two in this guide:
+There are many possible Git workflows, but only two in this guide:
 
 - [Git Centralized Workflow](../../recipes/recipes-centralized-workflow/): all work is done in a single branch
 - [GitHub Flow](../../recipes/recipes-gitflow/): different pieces of work are done in different branches
 
-#### Centralized Git workflow
+#### Centralized workflow
 
-In the centralized Git workflow, everyone works on a single branch (usually called `master`). Changes are committed to the local repository on each contributor's own computer. From time to time, each user pushes changes to a remote Git repository.
+In the centralized workflow, everyone works on a single branch (usually called `master`). Changes are committed to the local repository on each contributor's own computer. From time to time, each user pushes changes to a remote Git repository.
 
 ![Diagram of the Git centralized workflow](../img/git-centralized-workflow.png)
 
-Here are the operations a contributor performs when working in the centralized Git workflow.
+Here are the operations a contributor performs when working in the centralized workflow.
 
 --8<-- "centralized-workflow-snippet.html"
 
@@ -27,7 +28,7 @@ In the event that two people create conflicting changes, they can be manually re
 
 Although this workflow is called "centralized," it doesn't really resemble the old centralized source control model. The central remote repository is not a single source of truth, because every contributor has their own copy of the entire repository.
 
-The following recipes use the centralized Git workflow: 
+The following recipes use the centralized workflow: 
 
 - [Edit a Git wiki](../../recipes/recipes-git-wiki/)
 - [Collaborate using centralized Git workflow](../../recipes/recipes-centralized-workflow/)
@@ -58,7 +59,7 @@ The following recipe uses the GitHub flow:
 
 ## How to Git
 
-These are the commands that make up the steps in the Git branching workflows.
+These are the commands that make up the steps in the Git workflows.
 
 ### Pull
 
@@ -233,7 +234,7 @@ Git knows when you make changes to your files. When you want to save those chang
     You can switch to any existing branch by typing `git checkout 
     <branch-name>` without the `-b`. Example:
     ```
-    $ git checkout -b test-branch 
+    $ git checkout test-branch 
     Switched to branch 'test-branch'
     ```
     
@@ -255,7 +256,7 @@ Git knows when you make changes to your files. When you want to save those chang
 
 === "GitHub and GitHub Desktop"
 
-    1. When you push, the banner with the Push button changes "Create a pull
+    1. When you push, the banner with the Push button changes to read "Create a pull
        request from your current branch." Click **Create Pull Request**:  
        ![Create pull request button](../img/github-desktop-create-pull-request.png)
     1. The browser opens a page with a form for creating a pull request:
@@ -308,13 +309,13 @@ If you get out into the woods with Git, there's usually a way to get back&mdash;
 
 ### Working in the wrong branch
 
-So you've edited a file in the wrong branch. What you'd like to be able to do is undo those changes, switch branches, then re-do them. Actually, it would be even better to lift those changes off of the wrong branch, laying them gently on top of the branch you meant to be in. Fortunately, Git provides a command called `stash` that does exactly that.
+You've edited a file in the wrong branch. What you'd like to be able to do is undo those changes, switch branches, then re-do them. Actually, it would be even better to lift those changes off of the wrong branch, laying them gently on top of the branch you meant to be in. Fortunately, Git provides a command called `stash` that does exactly that.
 
 1. Make sure you're in the right directory.
 2. Use `git status` to check what branch you're on and what changes Git knows about.
 2. Make sure you're in the branch where you were erroneously working. For example:
    ```
-   $ git checkout -b the-wrong-branch 
+   $ git checkout the-wrong-branch 
     Switched to branch 'the-wrong-branch'
    ```
 1. Stash your uncommitted changes:  
@@ -333,13 +334,13 @@ So you've edited a file in the wrong branch. What you'd like to be able to do is
 
 ### Editing the wrong file
 
-You opened a file to look at it, but then your cat walked across the keyboard. You're not sure what was added or deleted. You just want to go back to the way things were at the last commit. For this, use `checkout`.
+You opened a file to look at it, but then your cat walked across the keyboard. You're not sure what was added or deleted. You just want to go back to the way things were at the last commit. For this, use `checkout`&mdash;it's not just for switching branches, but also for fixing changes to files.
 
 1. Make sure you're in the right directory.
 2. Use `git status` to check what branch you're on and what changes Git knows about.
 2. If necessary, switch to the correct branch. For example:
    ```
-   $ git checkout -b the-branch 
+   $ git checkout the-branch 
     Switched to branch 'the-branch'
    ```
 1. Use `git status` to see what files were accidentally modified. For example:
@@ -352,7 +353,7 @@ You opened a file to look at it, but then your cat walked across the keyboard. Y
 
        modified:   dont-change-this.md
    ```
-2. Use `git checkout` to undo the changes. For example:
+2. Use `git checkout -- <file>` to undo the changes. For example:
    ```
    git checkout -- dont-change-this.md
    ```
@@ -362,13 +363,13 @@ You opened a file to look at it, but then your cat walked across the keyboard. Y
 
 ### Staged too soon
 
-You edited the right file the right way, but then you added it to the staging area too hastily. You don't want to undo your changes to the file, but you would like to remove it from the next commit. This is one of the uses of `reset`. You can also use `reset` to do more drastic rollbacks&mdash;you can undo entire commits if you want.
+You edited the right file the right way, but then you added it to the staging area too hastily. You don't want to undo your changes to the file, but you would like to remove it from the next commit. This is one of the uses of `reset`. You can also use `reset` to do more drastic rollbacks&mdash;you can undo entire commits if needed.
 
 1. Make sure you're in the right directory.
 2. Use `git status` to check what branch you're on and what changes Git knows about.
 2. If necessary, switch to the correct branch. For example:
    ```
-   $ git checkout -b the-branch 
+   $ git checkout the-branch 
     Switched to branch 'the-branch'
    ```
 1. Use `git status` to see what files were accidentally modified. For example:

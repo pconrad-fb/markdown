@@ -90,5 +90,5 @@ If you are converting content from another project&mdash;an MkDocs site, for exa
 - Content tabs
 - Snippets
 
-If you use HTML in your Markdown, especially HTML examples (for example, in a document about web design), Pandoc can get confused about what to do. For example, Pandoc doesn't convert HTML tables to native PDF tables.
+
 

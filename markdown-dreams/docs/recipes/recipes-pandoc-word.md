@@ -26,7 +26,7 @@ pandoc -o my_document.docx my_markdown.md
 
 ### Special Pandoc formatting
 
-Pandoc includes a number of formatting tricks that you might find useful. One of the most useful is fenced div syntax, which uses groups of colon characters. 
+Pandoc includes a number of formatting tricks that you might find useful. One of the most useful is fenced div syntax, which uses groups of colons. 
 
 You can use fenced div syntax to create columns using nested divs without writing `<div>` tags in HTML. Take a look at this example:
 
@@ -50,7 +50,7 @@ Left column:
 
 ```
 
-That translates to a `<div class="columns">` containing two `<div class="column">` tags that Pandoc can understand. It uses these to create two columns in the Word doc. Each `div` can be signified with as few as three colons in a row; the outher `div` uses more colons here for readability.
+That translates to a `<div class="columns">` containing two `<div class="column">` tags. Pandoc uses these to create two columns in the Word doc. Each `div` can be signified with as few as three colons in a row; in the example, the outer `div` uses more colons for readability.
 
 You can use curly braces to define attributes such as identifiers, classes, and key/value pairs on headers, images, and a few other elements in Pandoc. If you’re using Pandoc to create long Word documents, this is handy because you can set anchors on headings and link to them internally.
 
@@ -119,5 +119,5 @@ If you are converting content from another project&mdash;an MkDocs site, for exa
 - Content tabs
 - Snippets
 
-If you use HTML in your Markdown, especially HTML examples (for example, in a book about web design), Pandoc can get confused about what to do. For example, Pandoc doesn't convert HTML tables to native Word tables.
+
 

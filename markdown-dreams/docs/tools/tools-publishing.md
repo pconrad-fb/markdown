@@ -39,6 +39,10 @@ See also:
 
 [MkDocs](https://www.mkdocs.org/) is a static site generator that turns directories of Markdown files into a searchable, presentable website. Customizable themes, many of them provided by the community, provide Markdown extensions for reusing content and for formatting such as tabs and admonitions. 
 
+!!! hint
+    According to its inventor, Tom Christie, "MkDocs" is spoken using "the 'Scottish
+    pronunciation' - as in McDocs, McDonald, McGregor, etc."
+
 See also:
 
 - [Publish documentation with MkDocs](../../recipes/recipes-mkdocs/)

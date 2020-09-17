@@ -58,13 +58,11 @@ Notice the `:::` character&mdash;this is Pandoc’s fenced div syntax, which let
 
 ![Screenshot of PowerPoint](../img/slides-pandoc-powerpoint.png)
 
-Not all Markdown formatting is appropriate for slides, but tables work nicely&mdash;and Pandoc provides special formatting that lets you do a few interesting things.
-
 ### Special Pandoc formatting
 
-Pandoc includes a number of formatting tricks that you might find useful. One of the most useful is fenced div syntax, which uses groups of colon characters as shorthand. 
+Pandoc includes a number of formatting tricks that you might find useful. One of the most useful is fenced div syntax, which uses groups of colons as shorthand for `<div>` tags. 
 
-One of the most interesting uses of this syntax is to create columns using nested divs without writing `<div>` tags in HTML. Take a look at this example:
+Take a look at this example:
 
 ```
 :::::::::::::: {.columns}
@@ -86,7 +84,7 @@ Left column:
 
 ```
 
-That translates to a `<div class="columns">` tag containing two `<div class="column">` tags that Pandoc can understand. It uses these to create two columns in a PowerPoint slide. Each div can be signified with as few as three colons in a row; the outher div uses more colons here for readability.
+That translates to a `<div class="columns">` tag containing two `<div class="column">` tags. Pandoc uses these to create two columns in a PowerPoint slide. Each div can be signified with as few as three colons in a row. In the example, the outer div uses more colons for readability.
 
 The curly braces let you define *attributes* such as identifiers, classes, and key/value pairs on headers, images, and a few other elements in Pandoc. In the above example, the attributes specify the names and widths of the divs.
 

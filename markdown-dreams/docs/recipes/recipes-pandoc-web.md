@@ -24,12 +24,12 @@ pancod -s -r html <URL> -o <Markdown filename>
 Example:
 
 ```
-pandoc -s -r html http://www.peterconrad.com/markdown-dreams/ -o how-to-do-things.md
+pandoc -s -r html http://www.peterconrad.com/markdown/ -o markdown.md
 ```
 
 
 ## Result
 
-The result is a Markdown file converted from the web page. You probably can't use the resulting Markdown as-is, because most modern web pages include a lot of code in addition to the human-readable content. However, you can see that the content is easy to read and convenient to copy and paste to another Markdown file. Pandoc tries its best to convert the `<div>` tags and their attributes to its own fenced div notation, which makes even the extra junk more readable as well.
+The result is a Markdown file converted from the web page. Because most modern web pages include a lot of code in addition to the human-readable content, you might have to do a little cleanup. However, you can see that the content is easy to read and convenient to copy and paste to another Markdown file. Pandoc tries its best to convert the `<div>` tags and their attributes to its own fenced div notation, which makes even the extra junk more readable as well.
 
 ![Screenshot of web page and Markdown result](../img/grab-web-page.png)

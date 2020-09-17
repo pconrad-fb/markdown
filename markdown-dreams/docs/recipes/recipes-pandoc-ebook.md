@@ -73,8 +73,6 @@ If you are converting content from another project&mdash;an MkDocs site, for exa
 - Content tabs
 - Snippets
 
-If you use HTML in your Markdown, especially HTML examples (for example, in a book about web design), Pandoc can get confused about what to do. 
-
 ### Working with a large number of files
 
 When your book contains many files, the command can get unwieldy:

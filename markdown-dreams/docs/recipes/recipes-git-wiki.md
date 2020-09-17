@@ -29,7 +29,7 @@ The easiest way to set up the wiki is by logging onto your Git host and adding i
 
 === "Bitbucket and Sourcetree"
     1. In a browser, log on to Bitbucket.
-	1. Under "Repository settings" look for "Features" and click **Wiki**
+	1. Under "Repository settings" look for "Features" and click **Wiki**.
 	1. Select **Public wiki** and save.  
        ![Wiki dialog](../img/recipes-git-wiki-create.png)
 

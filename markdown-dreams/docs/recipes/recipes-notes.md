@@ -1,6 +1,6 @@
 # Take notes
 
-Markdown is a great tool for taking notes quickly, because you can accomplish all the basic formatting without taking your hands off the keyboard. You can use any Markdown editor to work with files on your computer, but you can also share notes across your devices using a cloud storage service such as Dropbox plus a note-taking app like Joplin or a Markdown editor like Typora.
+Markdown is a great tool for taking notes quickly, because you can accomplish all the basic formatting without taking your hands off the keyboard. Coupled with cloud storage service such as Dropbox, a note-taking app like Joplin or a Markdown editor like Typora lets you organize your notes and share them among devices.
 
 ![Diagram of tools for taking notes](../img/markdown-notes.png)
 
@@ -30,17 +30,17 @@ Setting up Joplin is fairly straightforward. In the **Preferences** screen, ther
 
 ### Getting your old notes from Evernote 
 
-One of the great features of Joplin is that you can import notes from Evernote. The caveat is that the imported Markdown files will not have sensible filenames&mdash;but this is still better than manually copying and pasting each note individually.
+One of the great features of Joplin is that you can import notes from Evernote. The caveat is that the imported Markdown files will not have sensible filenames&mdash;but this is still better than manually copying and pasting each note.
 
 To export each notebook from Evernote:
 
-1. Right click a notebook in the left nav and select Export notes  
+1. In Evernote, right click a notebook in the left nav and select **Export notes**.  
    ![Export notes menu](../img/joplin-export-notes.png)  
 2. Export the notebook as an ENEX file.  
    ![Export notes dialog](../img/joplin-notebook-enex.png)  
-3. In Joplin, go to File > Import and import the notebook as Markdown.  
+3. In Joplin, go to **File > Import** and import the notebook as Markdown.  
    ![Import notes menu](../img/joplin-import-enex.png)  
-4. You can then export the notebook as Markdown from Joplin into the folder where you have decided to store your notes.  
+4. If you wish, you can then export the notebook as Markdown from Joplin into the folder where you have decided to store your notes.  
    ![Export Markdown menu](../img/joplin-export-markdown.png)
    
 ## Typora
@@ -60,25 +60,27 @@ Installing and using Typora is pretty straightforward. You can store files in mu
 To fine-tune Typora as a note-taking application, set a few preferences:
 
 1. Go to **File > Preferences**. 
-1. Click the **General** tab:  
+1. Click the **General** tab.    
+   ![General tab](../img/typora-general.png)
+   
 1. For On Launch, select **Restore last closed folders**. When you set up a folder to
    contain your notes, Typora will open it for you automatically. Of course, you can
    also open other files and folders.
 1. Check the **Auto Save** checkbox and make sure **Save without asking…** is checked.
    You won’t have to think about saving notes; they’ll just always be saved.
-   ![General tab](../img/typora-general.png)
-
 1. Click the **Image** tab.
+   ![Image tab](../img/typora-image.png)
+
 1. Select **Copy image to ./${filename}.assets**. Typora will make a folder for each    
    document’s images. This makes it easy to take the images along if you convert the
    document to a different format or send it to another location.
 1. Check all the boxes except for the auto escape one. This makes sure that local files
    and online images also get added to the .assets folder. By the way, Typora saves
    copies of pasted images, too!
-   ![Image tab](../img/typora-image.png)
-
 1. Click the **Markdown** tab.
-1. Check the **Highlight** box so that you can highlight things in your notes.
    ![Markdown tab](../img/typora-markdown.png)
+   
+1. Check the **Highlight** box so that you can highlight things in your notes.
+
 
 

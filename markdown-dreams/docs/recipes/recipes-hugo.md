@@ -54,6 +54,9 @@ Visit https://gohugo.io/ for quickstart guide and full documentation.
 
 ```
 
+!!! Hint
+    For source control and collaboration, create the project in a Git repo.
+    
 ## Adding a theme
 
 To add a theme, you use the `git submodule add` command from within your site directory. Each theme in Hugo's official [Complete List](https://themes.gohugo.io/) includes instructions for adding the submodule from the correct Git repository. Example:
@@ -98,7 +101,7 @@ draft: true
 
 You must add Markdown content before you can preview the page. A page in Hugo must contain both frontmatter and Markdown content. If either is missing, the page shows `404 page not found` when you try to preview it.
 
-Frontmatter can signal content status, including publish and expiry dates, and can contain variables that you can use in templates and in content by creating your own Hugo shortcodes. Variables and shortcodes are outside the scope of this recipe, but the Hugo website has a lot of documentation.
+Frontmatter can signal content status, including publish and expiry dates, and can contain variables. You can use the variables in templates and in content by creating your own Hugo shortcodes. Variables and shortcodes are outside the scope of this recipe, but the Hugo website has a lot of documentation.
 
 If you are migrating content into Hugo from a Git wiki, MkDocs site, or some other source, you will need to add frontmatter to any pages that don't already have it.
 
@@ -109,11 +112,11 @@ To preview your content, start the Hugo server:
 ```
 $ hugo server -D
 ```
-The `-D` option tell Hugo to include draft pages in the preview. If you omit this option, any page with `draft:true` in the frontmatter is ignored.
+The `-D` option tells Hugo to include draft pages in the preview. If you omit this option, any page with `draft:true` in the frontmatter is ignored.
 
 ![Screenshot of Hugo live preview](../img/hugo-preview.png)
 
-Hugo is a bit finicky about previewing and building content, and there are a few reasons why pages might not show up in the preview. Make sure each file contains both frontmatter and Markdown, that it doesn't have a publish date in the future or expiry date in the past, and so on.
+Hugo is a bit finicky about previewing and building content, and there are a few reasons why pages might not show up in the preview. A first troubleshooting step is to make sure each file contains both frontmatter and Markdown, and that it doesn't have a publish date in the future or expiry date in the past.
 
 ### Images
 

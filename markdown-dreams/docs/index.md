@@ -1,18 +1,18 @@
 # How to do things with Markdown
 
-Markdown is not just a markup language. It is an ecosystem of powerful tools that lets you do everything from quickly writing an HTML page, to managing a full doc set, to taking notes, to writing a novel&mdash;to creating a slide presentation. Markdown makes it easy to create content quickly, because its simple syntax covers most of the bases without requiring you to take your fingers off the keys.
+Markdown is not just a markup language. It is an ecosystem of powerful tools that lets you quickly craft an HTML page, manage a full doc set, take notes, write a novel&mdash;even create a slide presentation. Markdown makes it easy to create content quickly, because its simple syntax covers most of the bases without requiring you to take your fingers off the keys.
 
-With shared storage or source control, Markdown can be a powerful collaboration tool, suitable for both technical and non-technical contributors and supported by tools that meet every preference.
+With shared storage or source control, Markdown can be a powerful collaboration framework, suitable for both technical and non-technical contributors and supported by tools that meet every preference.
 
-This guide presents some basic instructions to get set up with some useful Markdown tools, and some recipes for using them. Each recipe lists what you'll need. You might want to get a basic set of tools set up first. Read [Getting started](../getting-started/getting-started/) to learn more.
+This guide presents some basic recipes for working with some useful Markdown tools. Each recipe lists what you'll need. Read [Getting started](getting-started/getting-started/) to learn how to get set up.
 
-If you want to know more about what tools are available first, you can browse these sections:
+If you want to know more about the available tools first, you can browse these sections:
 
 - [Markdown editors](../tools/tools-editors/)
 - [Publishing tools](../tools/tools-publishing/) 
 - [Source control with Git](../tools/tools-git/).
 
-You might find it interesting to install more than one Markdown editor to see which features you like.
+Consider installing more than one Markdown editor to see which features you like.
 
 ## About the recipes
 
