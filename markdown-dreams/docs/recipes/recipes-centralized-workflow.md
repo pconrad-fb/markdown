@@ -12,7 +12,7 @@ In this workflow, everyone works on the same branch. This makes things easy for 
     If you're publishing a large website or documentation set in a production 
     environment with with a substantial number of
     collaborators, you should consider using [GitHub Flow](../recipes-gitflow/) instead.
-
+ 
 ## Ingredients
 
 <table>
